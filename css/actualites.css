@@ -1,0 +1,159 @@
+.actualites-main {
+    padding-top: 80px;
+}
+
+.actualites-hero {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.categories-filter {
+    margin-top: 2rem;
+}
+
+.categories-filter button {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    margin: 0 0.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.categories-filter button.active,
+.categories-filter button:hover {
+    background: white;
+    color: var(--primary-color);
+}
+
+.actualites-grid {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.article-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.article-card.featured {
+    grid-column: 1 / -1;
+}
+
+.article-image {
+    position: relative;
+}
+
+.article-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.category {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: var(--accent-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.article-content {
+    padding: 1.5rem;
+}
+
+.date {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+}
+
+.read-more {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Sidebar styles */
+.sidebar {
+    position: sticky;
+    top: 100px;
+}
+
+.upcoming-events {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.event {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.event-date {
+    text-align: center;
+    min-width: 60px;
+}
+
+.event-date .day {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.event-date .month {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.newsletter-signup {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.newsletter-signup form {
+    margin-top: 1rem;
+}
+
+.newsletter-signup input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.newsletter-signup button {
+    width: 100%;
+    padding: 0.8rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

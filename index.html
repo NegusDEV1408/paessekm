@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keur Massar Social - Accueil</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+    <!-- Remplacer la section header existante par celle-ci -->
+<header class="header-transparent">
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo Keur Massar Social">
+            </div>
+
+            <div class="nav-elements">
+                <ul class="nav-links">
+                    <li class="nav-item">
+                        <a href="index.html" class="active">
+                            <i class="fas fa-home"></i>
+                            <span>Accueil</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="pages/annuaire.html">
+                            <i class="fas fa-book"></i>
+                            <span>Annuaire</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="pages/annuaire.html#entreprises">Entreprises</a></li>
+                            <li><a href="pages/annuaire.html#associations">Associations</a></li>
+                            <li><a href="pages/annuaire.html#artisans">Artisans</a></li>
+                            <li><a href="pages/annuaire.html#cooperatives">Cooperatives</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/carte.html">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <span>Carte</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="pages/actualites.html">
+                            <i class="fas fa-newspaper"></i>
+                            <span>Actualités</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="pages/actualites.html#evenements">Événements</a></li>
+                            <li><a href="pages/actualites.html#news">Nouvelles</a></li>
+                            <li><a href="pages/actualites.html#projets">Projets</a></li>
+                            <li><a href="pages/actualites.html#blog">Blog</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/G.I.E.html">
+                            <i class="fas fa-building"></i>
+                            <span>G.I.E</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/contact.html">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="nav-buttons">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Barre de recherche -->
+    <div class="search-overlay">
+        <div class="search-container">
+            <input type="text" placeholder="Rechercher...">
+            <button class="close-search">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+</header>
+
+    <main>
+        
+        <section class="hero">
+            <!-- Slider Container -->
+            <div class="hero-slider">
+                <!-- Slides -->
+                <div class="hero-slide active" style="background-image: url('images/hero/dep.jpg')">
+                    <div class="slide-content">
+                        <h1>Plateforme des Acteurs de l'Economie Sociale, Solidaire et Environnementale de Keur Massar (PAESSE)</h1>
+                        <!-- <p>Découvrez les acteurs de l'économie sociale de notre communauté</p>-->
+                        <div class="cta-wrapper">
+                            <a href="pages/annuaire.html" class="cta-button">
+                                <span class="cta-icon"><i class="fas fa-book"></i></span>
+                                <span class="cta-text">
+                                    <span class="cta-main">Explorer l'annuaire</span>
+                                    <span class="cta-sub">Découvrez plus de 150 acteurs locaux</span>
+                                </span>
+                                <span class="cta-arrow"><i class="fas fa-arrow-right"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                    
+                </div>
+                    
+                </div>
+                <!-- Navigation Controls -->
+                
+            </div>
+
+            <!-- Bande des partenaires -->
+            <div class="hero-partners">
+                <div class="partners-overlay"></div>
+                <div class="partners-content">
+                    <div class="partners-title">
+                        <span>Nos Partenaires Institutionnels</span>
+                    </div>
+                    <div class="partners-slider">
+                        <div class="partners-track">
+                            <!-- Logo 1 -->
+                            <div class="partner-logo">
+                                <img src="images/partners/corpafrica" alt="Mairie de Keur Massar">
+                                <span class="partner-name">Corp Africa</span>
+                            </div>
+                            <!-- Logo 2 -->
+                            <div class="partner-logo">
+                                <img src="images/partners/der" alt="DER/FJ">
+                                <span class="partner-name">DER/FJ</span>
+                            </div>
+                            <!-- Logo 3 -->
+                            <div class="partner-logo">
+                                <img src="images/partners/adpme" alt="ADEPME">
+                                <span class="partner-name">ADEPME</span>
+                            </div>
+                            <!-- Logo 4 -->
+                            <div class="partner-logo">
+                                <img src="images/partners/dakar" alt="3FPT">
+                                <span class="partner-name">Ville de Dakar</span>
+                            </div>
+                            <!-- Logo 5 -->
+                            <div class="partner-logo">
+                                <img src="images/partners/rabat" alt="ONFP">
+                                <span class="partner-name">Ville de Rabat</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="impact-stats">
+            <div class="stats-wrapper">
+                <div class="stats-header">
+                    <h2><i class="fas fa-chart-bar"></i> Notre Impact en Chiffres</h2>
+                    <p>Découvrez l'impact de notre réseau à Keur Massar</p>
+                </div>
+
+                <div class="stats-container">
+                    <!-- Statistiques principales -->
+                    <div class="stats-row">
+                        <div class="stat-item" data-aos="fade-up">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-people-group"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-number" data-category="gieActifs" data-target="150">0</div>
+                                    <h3>G.I.E Actifs</h3>
+                                    <div class="stat-progress">
+                                        <div class="progress-bar" style="width: 75%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-number" data-category="membres" data-target="2500">0</div>
+                                    <h3>Membres</h3>
+                                    <div class="stat-progress">
+                                        <div class="progress-bar" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-number" data-category="partenaires" data-target="45">0</div>
+                                    <h3>Partenaires</h3>
+                                    <div class="stat-progress">
+                                        <div class="progress-bar" style="width: 65%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-tasks-alt"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-number" data-category="projetsRealises" data-target="85">0</div>
+                                    <h3>Projets Réalisés</h3>
+                                    <div class="stat-progress">
+                                        <div class="progress-bar" style="width: 70%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Graphiques et statistiques détaillées -->
+                    <div class="stats-details">
+                        <div class="chart-container" data-aos="fade-up" data-aos-delay="400">
+                            <h3><i class="fas fa-chart-pie"></i> Répartition par Secteur</h3>
+                            <canvas id="sectorsChart"></canvas>
+                        </div>
+                        
+                        <div class="demographics-container" data-aos="fade-up" data-aos-delay="500">
+                            <h3><i class="fas fa-users-viewfinder"></i> Composition</h3>
+                            <div class="demographic-stats">
+                                <div class="demographic-item">
+                                    <span class="label"><i class="fas fa-female"></i> Femmes</span>
+                                    <div class="progress-bar-container">
+                                        <div class="progress-bar" style="width: 65%"></div>
+                                        <span class="percentage">65%</span>
+                                    </div>
+                                </div>
+                                <div class="demographic-item">
+                                    <span class="label"><i class="fas fa-user-graduate"></i> Jeunes</span>
+                                    <div class="progress-bar-container">
+                                        <div class="progress-bar" style="width: 45%"></div>
+                                        <span class="percentage">45%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <i class="fas fa-users"></i>
+                <h3>Réseau Local</h3>
+                <p>Connectez-vous avec les acteurs locaux</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-map-marked-alt"></i>
+                <h3>Carte Interactive</h3>
+                <p>Localisez les initiatives près de chez vous</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-newspaper"></i>
+                <h3>Actualités</h3>
+                <p>Restez informé des dernières nouvelles</p>
+            </div>
+        </section>
+
+        <section class="latest-news">
+            <div class="news-header">
+                <h2>Dernières Actualités</h2>
+                <p>Restez informé des dernières nouvelles de notre communauté</p>
+            </div>
+
+            <div class="news-container">
+                <!-- Article 1 -->
+                <article class="news-card" data-aos="fade-up">
+                    <div class="news-image">
+                        <img src="images/news/news3" alt="Formation GIE">
+                        <span class="news-category">Formation</span>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <span class="date"><i class="far fa-calendar"></i> 15 Mars 2024</span>
+                            <span class="author"><i class="far fa-user"></i> Admin</span>
+                        </div>
+                        <h3>Formation en gestion financière pour les G.I.E</h3>
+                        <p>Programme de renforcement des capacités en gestion financière pour les membres des G.I.E de Keur Massar.</p>
+                        <a href="pages/actualites.html" class="read-more">Lire la suite <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="news-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="news-image">
+                        <img src="images/news/news1" alt="Projet Agriculture">
+                        <span class="news-category">Projet</span>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <span class="date"><i class="far fa-calendar"></i> 12 Mars 2024</span>
+                            <span class="author"><i class="far fa-user"></i> Admin</span>
+                        </div>
+                        <h3>Lancement du projet d'agriculture urbaine</h3>
+                        <p>Un nouveau projet d'agriculture urbaine vient d'être lancé à Keur Massar avec le soutien de nos partenaires.</p>
+                        <a href="pages/actualites.html" class="read-more">Lire la suite <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="news-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="news-image">
+                        <img src="images/news/news2" alt="Nouveau Partenariat">
+                        <span class="news-category">Partenariat</span>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <span class="date"><i class="far fa-calendar"></i> 10 Mars 2024</span>
+                            <span class="author"><i class="far fa-user"></i> Admin</span>
+                        </div>
+                        <h3>Nouveau partenariat stratégique</h3>
+                        <p>Signature d'un partenariat stratégique pour le développement des activités économiques à Keur Massar.</p>
+                        <a href="pages/actualites.html" class="read-more">Lire la suite <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="news-footer">
+                <a href="pages/actualites.html" class="view-all-btn">
+                    Voir toutes les actualités
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>À propos</h4>
+                <p>Plateforme des Acteurs de l'Economie Sociale, Solidaire et Environnementale de Keur Massar (PAESSE) dédiée à l'économie sociale de Keur Massar</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: contact@keurmassar-social.sn</p>
+                <p>Tél: +221 XX XXX XX XX</p>
+            </div>
+            <div class="footer-section">
+                <h4>Suivez-nous</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 PAESSKM. Tous droits réservés. ︱ Conçu par Negus Agency</p> 
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/stats.js"></script>
+   <!-- Ajouter dans le head de votre HTML -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+</body>
+</html>

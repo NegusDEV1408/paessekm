@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Keur Massar Social</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Leaflet CSS pour la carte -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+</head>
+<body>
+    
+    <header class="header-transparent">
+        <nav class="main-nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="../images/logo.png" alt="Logo Keur Massar Social">
+                </div>
+    
+                <div class="nav-elements">
+                    <ul class="nav-links">
+                        <li class="nav-item">
+                            <a href="../index.html" class="active">
+                                <i class="fas fa-home"></i>
+                                <span>Accueil</span>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="../pages/annuaire.html">
+                                <i class="fas fa-book"></i>
+                                <span>Annuaire</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../pages/annuaire.html#entreprises">Entreprises</a></li>
+                                <li><a href="../pages/annuaire.html#associations">Associations</a></li>
+                                <li><a href="../pages/annuaire.html#artisans">Artisans</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../pages/carte.html">
+                                <i class="fas fa-map-marked-alt"></i>
+                                <span>Carte</span>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="../pages/actualites.html">
+                                <i class="fas fa-newspaper"></i>
+                                <span>Actualités</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../pages/actualites.html#evenements">Événements</a></li>
+                                <li><a href="../pages/actualites.html#news">Nouvelles</a></li>
+                                <li><a href="../pages/actualites.html#blog">Blog</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../pages/G.I.E.html">
+                                <i class="fas fa-building"></i>
+                                <span>G.I.E</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../pages/contact.html">
+                                <i class="fas fa-envelope"></i>
+                                <span>Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+    
+                    <div class="nav-buttons">
+                        <button class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <button class="theme-toggle">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <button class="menu-toggle">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    
+        <!-- Barre de recherche -->
+        <div class="search-overlay">
+            <div class="search-container">
+                <input type="text" placeholder="Rechercher...">
+                <button class="close-search">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+        <!-- Navigation identique aux autres pages -->
+    
+
+    <main class="contact-main">
+        <section class="contact-hero">
+            <h1>Contactez-nous</h1>
+            <p>Notre équipe est à votre écoute pour toute question ou suggestion</p>
+            <div class="hero-decoration">
+                <i class="fas fa-envelope-open-text"></i>
+            </div>
+        </section>
+
+        <div class="contact-container">
+            <section class="contact-info">
+                <h2>Nos Coordonnées</h2>
+                <div class="info-cards-grid">
+                    <div class="info-card">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Notre Adresse</h3>
+                        <p>Bureau principal</p>
+                        <p>Keur Massar, Dakar, Sénégal</p>
+                        <a href="#map" class="info-link">Voir sur la carte <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Téléphone</h3>
+                        <p>+221 77 XXX XX XX</p>
+                        <p>+221 33 XXX XX XX</p>
+                        <a href="tel:+221XXXXXXXX" class="info-link">Appeler maintenant <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p>contact@keurmassar-social.sn</p>
+                        <a href="mailto:contact@keurmassar-social.sn" class="info-link">Envoyer un email <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Horaires</h3>
+                        <p>Lundi - Vendredi: 9h - 17h</p>
+                        <p>Samedi: 9h - 13h</p>
+                        <p class="status-open">Ouvert actuellement</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact-form-section">
+                <h2>Envoyez-nous un message</h2>
+                <form id="contactForm" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nom">Nom complet <span class="required">*</span></label>
+                            <input type="text" id="nom" name="nom" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="telephone">Téléphone</label>
+                            <input type="tel" id="telephone" name="telephone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sujet">Sujet <span class="required">*</span></label>
+                            <select id="sujet" name="sujet" required>
+                                <option value="">Choisissez un sujet</option>
+                                <option value="information">Demande d'information</option>
+                                <option value="partenariat">Proposition de partenariat</option>
+                                <option value="suggestion">Suggestion</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message <span class="required">*</span></label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Envoyer le message
+                    </button>
+                </form>
+            </section>
+        </div>
+
+        <section class="map-section" id="map">
+            <h2>Notre Localisation</h2>
+            <div class="map-container">
+                <div id="map"></div>
+                <div class="map-info">
+                    <h3>Comment nous trouver</h3>
+                    <p>Nous sommes situés au cœur de Keur Massar, facilement accessible par les transports en commun.</p>
+                    <a href="https://goo.gl/maps/VOTRE-LIEN" target="_blank" class="directions-btn">
+                        <i class="fas fa-directions"></i> Obtenir l'itinéraire
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Footer identique aux autres pages -->
+    </footer>
+
+    <!-- Leaflet JS pour la carte -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="../js/contact.js"></script>
+</body>
+</html>

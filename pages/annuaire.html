@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annuaire - Keur Massar Social</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/annuaire.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header-transparent">
+        <nav class="main-nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="../images/logo.png" alt="Logo Keur Massar Social">
+                </div>
+    
+                <div class="nav-elements">
+                    <ul class="nav-links">
+                        <li class="nav-item">
+                            <a href="../index.html" class="active">
+                                <i class="fas fa-home"></i>
+                                <span>Accueil</span>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="../pages/annuaire.html">
+                                <i class="fas fa-book"></i>
+                                <span>Annuaire</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../pages/annuaire.html#entreprises">Entreprises</a></li>
+                                <li><a href="../pages/annuaire.html#associations">Associations</a></li>
+                                <li><a href="../pages/annuaire.html#artisans">Artisans</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../pages/carte.html">
+                                <i class="fas fa-map-marked-alt"></i>
+                                <span>Carte</span>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="../pages/actualites.html">
+                                <i class="fas fa-newspaper"></i>
+                                <span>Actualités</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../pages/actualites.html#events">Événements</a></li>
+                                <li><a href="../pages/actualites.html#news">Nouvelles</a></li>
+                                <li><a href="../pages/actualites.html#blog">Blog</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../pages/G.I.E.html">
+                                <i class="fas fa-building"></i>
+                                <span>G.I.E</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../pages/contact.html">
+                                <i class="fas fa-envelope"></i>
+                                <span>Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+    
+                    <div class="nav-buttons">
+                        <button class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <button class="theme-toggle">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <button class="menu-toggle">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    
+        <!-- Barre de recherche -->
+        <div class="search-overlay">
+            <div class="search-container">
+                <input type="text" placeholder="Rechercher...">
+                <button class="close-search">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- Même header que index.html -->
+    
+    <main class="annuaire-main">
+        <section class="annuaire-hero">
+            <h1>Annuaire des Acteurs Locaux</h1>
+            <p>Découvrez les entreprises, associations et artisans de Keur Massar</p>
+        </section>
+
+        <section class="search-section">
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="search" placeholder="Rechercher par nom, catégorie ou secteur...">
+                    <button type="submit" class="search-button">
+                        <i class="fas fa-search"></i>
+                        <span>Rechercher</span>
+                    </button>
+                </div>
+                <div class="filters">
+                    <div class="filter-group">
+                        <i class="fas fa-tags"></i>
+                        <select id="category">
+                            <option value="">Toutes les catégories</option>
+                            <option value="association">Associations</option>
+                            <option value="cooperative">Coopératives</option>
+                            <option value="entreprise">Entreprises sociales</option>
+                            <option value="ong">ONG</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <i class="fas fa-industry"></i>
+                        <select id="sector">
+                            <option value="">Tous les secteurs</option>
+                            <option value="agriculture">Agriculture</option>
+                            <option value="education">Éducation</option>
+                            <option value="sante">Santé</option>
+                            <option value="artisanat">Artisanat</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="results-count">
+            <span id="count">0</span> résultats trouvés
+        </div>
+
+        <section class="directory-grid">
+            <!-- Les cartes seront générées dynamiquement par JavaScript -->
+        </section>
+
+        <div class="pagination">
+            <button class="prev-page" disabled><i class="fas fa-chevron-left"></i> Précédent</button>
+            <div class="page-numbers">
+                <!-- Les numéros de page seront générés par JavaScript -->
+            </div>
+            <button class="next-page">Suivant <i class="fas fa-chevron-right"></i></button>
+        </div>
+
+        <section class="annuaire-news">
+            <div class="news-header">
+                <h2>Actualités des Acteurs</h2>
+                <p>Les dernières nouvelles de notre communauté</p>
+            </div>
+
+            <div class="news-grid">
+                <!-- Article 1 -->
+                <article class="news-card" data-aos="fade-up">
+                    <div class="news-image">
+                        <img src="../images/news/news1.jpg" alt="Formation GIE">
+                        <span class="news-category">Formation</span>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <span class="date"><i class="far fa-calendar"></i> 20 Mars 2024</span>
+                            <span class="author"><i class="far fa-user"></i> Admin</span>
+                        </div>
+                        <h3>Formation en gestion financière</h3>
+                        <p>Session de formation pour les membres des G.I.E sur la gestion financière et la comptabilité.</p>
+                        <div class="news-footer">
+                            <a href="actualites.html" class="read-more">Lire la suite <i class="fas fa-arrow-right"></i></a>
+                            <div class="news-tags">
+                                <span class="tag">Formation</span>
+                                <span class="tag">Finance</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="news-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="news-image">
+                        <img src="../images/news/news2.jpg" alt="Projet Agriculture">
+                        <span class="news-category">Projet</span>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <span class="date"><i class="far fa-calendar"></i> 18 Mars 2024</span>
+                            <span class="author"><i class="far fa-user"></i> Admin</span>
+                        </div>
+                        <h3>Lancement du projet agricole</h3>
+                        <p>Nouveau projet d'agriculture urbaine lancé par les coopératives locales de Keur Massar.</p>
+                        <div class="news-footer">
+                            <a href="actualites.html" class="read-more">Lire la suite <i class="fas fa-arrow-right"></i></a>
+                            <div class="news-tags">
+                                <span class="tag">Agriculture</span>
+                                <span class="tag">Innovation</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="news-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="news-image">
+                        <img src="../images/news/news3.jpg" alt="Partenariat">
+                        <span class="news-category">Partenariat</span>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <span class="date"><i class="far fa-calendar"></i> 15 Mars 2024</span>
+                            <span class="author"><i class="far fa-user"></i> Admin</span>
+                        </div>
+                        <h3>Nouveau partenariat stratégique</h3>
+                        <p>Signature d'une convention de partenariat pour le développement des activités économiques.</p>
+                        <div class="news-footer">
+                            <a href="actualites.html" class="read-more">Lire la suite <i class="fas fa-arrow-right"></i></a>
+                            <div class="news-tags">
+                                <span class="tag">Partenariat</span>
+                                <span class="tag">Développement</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="news-more">
+                <a href="actualites.html" class="view-all-btn">
+                    Voir toutes les actualités
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Même footer que index.html -->
+    
+    <script src="../js/annuaire.js"></script>
+</body>
+</html>

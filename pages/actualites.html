@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualités - Keur Massar Social</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/actualites.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header-transparent">
+        <nav class="main-nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="../images/logo.png" alt="Logo Keur Massar Social">
+                </div>
+    
+                <div class="nav-elements">
+                    <ul class="nav-links">
+                        <li class="nav-item">
+                            <a href="../index.html" class="active">
+                                <i class="fas fa-home"></i>
+                                <span>Accueil</span>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="../pages/annuaire.html">
+                                <i class="fas fa-book"></i>
+                                <span>Annuaire</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../pages/annuaire.html#entreprises">Entreprises</a></li>
+                                <li><a href="../pages/annuaire.html#associations">Associations</a></li>
+                                <li><a href="../pages/annuaire.html#artisans">Artisans</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../pages/carte.html">
+                                <i class="fas fa-map-marked-alt"></i>
+                                <span>Carte</span>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="../pages/actualites.html">
+                                <i class="fas fa-newspaper"></i>
+                                <span>Actualités</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../pages/actualites.html#evenements">Événements</a></li>
+                                <li><a href="../pages/actualites.html#news">Nouvelles</a></li>
+                                <li><a href="../pages/actualites.html#blog">Blog</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../pages/G.I.E.html">
+                                <i class="fas fa-building"></i>
+                                <span>G.I.E</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../pages/contact.html">
+                                <i class="fas fa-envelope"></i>
+                                <span>Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+    
+                    <div class="nav-buttons">
+                        <button class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <button class="theme-toggle">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <button class="menu-toggle">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    
+        <!-- Barre de recherche -->
+        <div class="search-overlay">
+            <div class="search-container">
+                <input type="text" placeholder="Rechercher...">
+                <button class="close-search">
+                <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- Header identique -->
+
+    <main class="actualites-main">
+        <section class="actualites-hero">
+            <h1>Actualités et Événements</h1>
+            <div class="categories-filter">
+                <button class="active" data-category="tout">Tout</button>
+                <button data-category="evenements">Événements</button>
+                <button data-category="projets">Projets</button>
+                <button data-category="formations">Formations</button>
+            </div>
+        </section>
+
+        <section class="actualites-grid">
+            <div class="articles-container">
+                <!-- Articles principaux -->
+                <article class="article-card featured">
+                    <div class="article-image">
+                        <img src="../images/actualites/femmes" alt="Forum de l'économie sociale">
+                        <span class="category">Événement</span>
+                    </div>
+                    <div class="article-content">
+                        <h2>Forum de l'Économie Sociale à Keur Massar</h2>
+                        <p class="date"><i class="far fa-calendar"></i> 15 Mai 2024</p>
+                        <p class="excerpt">
+                            Rejoignez-nous pour le premier forum de l'économie sociale et solidaire 
+                            de Keur Massar. Une journée d'échanges et de rencontres...
+                        </p>
+                        <a href="#" class="read-more">Lire la suite <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Autres articles -->
+                <div class="articles-grid">
+                    <!-- Article 1 -->
+                    <article class="article-card">
+                        <div class="article-image">
+                            <img src="../images/actualites/femmes" alt="Formation entrepreneuriat">
+                            <span class="category">Formation</span>
+                        </div>
+                        <div class="article-content">
+                            <h3>Formation en Entrepreneuriat Social</h3>
+                            <p class="date"><i class="far fa-calendar"></i> 10 Mai 2024</p>
+                            <p class="excerpt">Programme de formation gratuit pour les jeunes entrepreneurs...</p>
+                            <a href="#" class="read-more">Lire la suite</a>
+                        </div>
+                    </article>
+
+                    <!-- Article 2 -->
+                    <article class="article-card">
+                        <div class="article-image">
+                            <img src="../images/actualites/femmes" alt="Projet agriculture">
+                            <span class="category">Projet</span>
+                        </div>
+                        <div class="article-content">
+                            <h3>Lancement du Projet Agri-Tech</h3>
+                            <p class="date"><i class="far fa-calendar"></i> 5 Mai 2024</p>
+                            <p class="excerpt">Innovation dans l'agriculture urbaine à Keur Massar...</p>
+                            <a href="#" class="read-more">Lire la suite</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <aside class="sidebar">
+                <div class="upcoming-events">
+                    <h3>Événements à venir</h3>
+                    <div class="event">
+                        <div class="event-date">
+                            <span class="day">20</span>
+                            <span class="month">Mai</span>
+                        </div>
+                        <div class="event-info">
+                            <h4>Atelier de Formation</h4>
+                            <p>Marketing Digital pour Entrepreneurs</p>
+                        </div>
+                    </div>
+                    <!-- Autres événements -->
+                </div>
+
+                <div class="newsletter-signup">
+                    <h3>Newsletter</h3>
+                    <p>Restez informé de nos actualités</p>
+                    <form id="newsletter-form">
+                        <input type="email" placeholder="Votre email" required>
+                        <button type="submit">S'inscrire</button>
+                    </form>
+                </div>
+            </aside>
+        </section>
+    </main>
+
+    <!-- Footer identique -->
+
+    <script src="../js/actualites.js"></script>
+</body>
+</html>

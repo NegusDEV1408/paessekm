@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte Interactive - Keur Massar Social</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/carte.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header-transparent">
+        <nav class="main-nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="../images/logo.png" alt="Logo Keur Massar Social">
+                </div>
+    
+                <div class="nav-elements">
+                    <ul class="nav-links">
+                        <li class="nav-item">
+                            <a href="../index.html" class="active">
+                                <i class="fas fa-home"></i>
+                                <span>Accueil</span>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="../pages/annuaire.html">
+                                <i class="fas fa-book"></i>
+                                <span>Annuaire</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../pages/annuaire.html#entreprises">Entreprises</a></li>
+                                <li><a href="../pages/annuaire.html#associations">Associations</a></li>
+                                <li><a href="../pages/annuaire.html#artisans">Artisans</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../pages/carte.html">
+                                <i class="fas fa-map-marked-alt"></i>
+                                <span>Carte</span>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="../pages/actualites.html">
+                                <i class="fas fa-newspaper"></i>
+                                <span>Actualités</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../pages/actualites.html#evenements">Événements</a></li>
+                                <li><a href="../pages/actualites.html#news">Nouvelles</a></li>
+                                <li><a href="../pages/actualites.html#blog">Blog</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../pages/G.I.E.html">
+                                <i class="fas fa-building"></i>
+                                <span>G.I.E</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../pages/contact.html">
+                                <i class="fas fa-envelope"></i>
+                                <span>Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+    
+                    <div class="nav-buttons">
+                        <button class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <button class="theme-toggle">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <button class="menu-toggle">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    
+        <!-- Barre de recherche -->
+        <div class="search-overlay">
+            <div class="search-container">
+                <input type="text" placeholder="Rechercher...">
+                <button class="close-search">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- Même header que index.html -->
+    
+    <main class="carte-main">
+        <section class="carte-hero">
+            <h1>Carte Interactive</h1>
+            <p>Découvrez les acteurs de l'économie sociale et solidaire à Keur Massar</p>
+        </section>
+
+        <div class="carte-container">
+            <div class="map-sidebar">
+                <div class="search-box">
+                    <input type="text" id="map-search" placeholder="Rechercher un lieu...">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+
+                <div class="map-filters">
+                    <h3><i class="fas fa-filter"></i> Filtres</h3>
+                    <div class="filter-group">
+                        <div class="filter-category">
+                            <h4>Type d'organisation</h4>
+                            <label class="checkbox-container">
+                                <input type="checkbox" value="association" checked>
+                                <span class="checkmark"></span>
+                                <i class="fas fa-users"></i> Associations
+                                <span class="count">(25)</span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" value="cooperative" checked>
+                                <span class="checkmark"></span>
+                                <i class="fas fa-hands-helping"></i> Coopératives
+                                <span class="count">(12)</span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" value="entreprise" checked>
+                                <span class="checkmark"></span>
+                                <i class="fas fa-building"></i> Entreprises sociales
+                                <span class="count">(18)</span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" value="ong" checked>
+                                <span class="checkmark"></span>
+                                <i class="fas fa-globe"></i> ONG
+                                <span class="count">(8)</span>
+                            </label>
+                        </div>
+
+                        <div class="filter-category">
+                            <h4>Secteur d'activité</h4>
+                            <select id="sector-filter" multiple>
+                                <option value="education">Éducation</option>
+                                <option value="sante">Santé</option>
+                                <option value="environnement">Environnement</option>
+                                <option value="culture">Culture</option>
+                                <option value="artisanat">Artisanat</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-legend">
+                    <h3><i class="fas fa-info-circle"></i> Légende</h3>
+                    <div class="legend-items">
+                        <div class="legend-item">
+                            <span class="legend-color" style="background: #FF4444;"></span>
+                            <span class="legend-text">Association</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background: #44FF44;"></span>
+                            <span class="legend-text">Coopérative</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background: #4444FF;"></span>
+                            <span class="legend-text">Entreprise sociale</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background: #FFAA44;"></span>
+                            <span class="legend-text">ONG</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-stats">
+                    <h3><i class="fas fa-chart-pie"></i> Statistiques</h3>
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <span class="stat-number">63</span>
+                            <span class="stat-label">Organisations</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">Quartiers</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="map-wrapper">
+                <div id="map"></div>
+                <div class="map-controls">
+                    <button class="control-btn" id="zoomIn"><i class="fas fa-plus"></i></button>
+                    <button class="control-btn" id="zoomOut"><i class="fas fa-minus"></i></button>
+                    <button class="control-btn" id="centerMap"><i class="fas fa-crosshairs"></i></button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Même footer que index.html -->
+    
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="../js/carte.js"></script>
+</body>
+</html>

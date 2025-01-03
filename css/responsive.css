@@ -1,0 +1,10 @@
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* À remplacer par un menu hamburger */
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+        padding: 0 1rem;
+    }
+}
