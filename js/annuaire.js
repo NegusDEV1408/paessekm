@@ -6,7 +6,7 @@ const acteurs = [
         categorie: "association",
         secteur: "artisanat",
         description: "Promotion de l'artisanat local par les femmes",
-        image: "../images/acteurs/femmes-entrepreneures.jpg",
+        image: "../images/acteurs/acteurs",
         contact: {
             email: "contact@femmes-entrepreneures.sn",
             telephone: "+221 77 000 00 01"
@@ -18,7 +18,55 @@ const acteurs = [
         categorie: "cooperative",
         secteur: "agriculture",
         description: "Production et distribution de produits agricoles locaux",
-        image: "../images/acteurs/cooperative-agricole.jpg",
+        image: "../images/acteurs/acteurs",
+        contact: {
+            email: "info@coopagri-km.sn",
+            telephone: "+221 77 000 00 02"
+        }
+    },
+    {
+        id: 3,
+        nom: "Coopérative Agricole de Keur Massar",
+        categorie: "cooperative",
+        secteur: "agriculture",
+        description: "Production et distribution de produits agricoles locaux",
+        image: "../images/acteurs/acteurs",
+        contact: {
+            email: "info@coopagri-km.sn",
+            telephone: "+221 77 000 00 02"
+        }
+    },
+    {
+        id: 4,
+        nom: "Coopérative Agricole de Keur Massar",
+        categorie: "cooperative",
+        secteur: "agriculture",
+        description: "Production et distribution de produits agricoles locaux",
+        image: "../images/acteurs/acteurs",
+        contact: {
+            email: "info@coopagri-km.sn",
+            telephone: "+221 77 000 00 02"
+        }
+    },
+    {
+        id: 5,
+        nom: "Coopérative Agricole de Keur Massar",
+        categorie: "cooperative",
+        secteur: "agriculture",
+        description: "Production et distribution de produits agricoles locaux",
+        image: "../images/acteurs/acteurs",
+        contact: {
+            email: "info@coopagri-km.sn",
+            telephone: "+221 77 000 00 02"
+        }
+    },
+    {
+        id: 6,
+        nom: "Coopérative Agricole de Keur Massar",
+        categorie: "cooperative",
+        secteur: "agriculture",
+        description: "Production et distribution de produits agricoles locaux",
+        image: "../images/acteurs/acteurs",
         contact: {
             email: "info@coopagri-km.sn",
             telephone: "+221 77 000 00 02"

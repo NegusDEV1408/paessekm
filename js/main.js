@@ -169,3 +169,120 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(card);
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const map = L.map('keurMassarMap').setView([14.7645, -17.3276], 13);
+    
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Données détaillées des communes
+    const communes = {
+        'yeumbeul-nord': {
+            coords: [14.7742, -17.3673],
+            nom: 'Yeumbeul Nord',
+            superficie: '7,3 km²',
+            population: '168 379 habitants',
+            limites: 'Limitrophe à Malika, Yeumbeul Sud et Keur Massar Nord',
+            quartiers: ['Yeumbeul Layenne', 'Thiaroye Kao', 'Aïnoumady']
+        },
+        'yeumbeul-sud': {
+            coords: [14.7689, -17.3757],
+            nom: 'Yeumbeul Sud',
+            superficie: '6,8 km²',
+            population: '157 635 habitants',
+            limites: 'Limitrophe à Yeumbeul Nord et Keur Massar Sud',
+            quartiers: ['Darou Salam', 'Médina', 'Diamalaye']
+        },
+        'keur-massar-nord': {
+            coords: [14.7645, -17.3276],
+            nom: 'Keur Massar Nord',
+            superficie: '16,8 km²',
+            population: '189 456 habitants',
+            limites: 'Limitrophe à Yeumbeul Nord et Malika',
+            quartiers: ['Darou Rakhmane', 'Ainoumady', 'Darou Salam']
+        },
+        'keur-massar-sud': {
+            coords: [14.7589, -17.3234],
+            nom: 'Keur Massar Sud',
+            superficie: '18,2 km²',
+            population: '176 542 habitants',
+            limites: 'Limitrophe à Keur Massar Nord et Jaxaay-Parcelles',
+            quartiers: ['Kamb', 'Boune', 'Ngom']
+        },
+        'malika': {
+            coords: [14.7923, -17.3370],
+            nom: 'Malika',
+            superficie: '5,9 km²',
+            population: '72 189 habitants',
+            limites: 'Limitrophe à Yeumbeul Nord et Keur Massar Nord',
+            quartiers: ['Malika Plage', 'Malika Village', 'Diamalaye']
+        },
+        'jaxaay-parcelles': {
+            coords: [14.7534, -17.3089],
+            nom: 'Jaxaay-Parcelles',
+            superficie: '22,4 km²',
+            population: '145 678 habitants',
+            limites: 'Limitrophe à Keur Massar Sud',
+            quartiers: ['Jaxaay 1', 'Jaxaay 2', 'Parcelles Assainies']
+        }
+    };
+
+    // Style personnalisé pour les popups
+    const customPopup = (commune) => {
+        return `
+            <div class="commune-popup">
+                <h3>${commune.nom}</h3>
+                <div class="commune-info">
+                    <p><i class="fas fa-chart-area"></i> <strong>Superficie:</strong> ${commune.superficie}</p>
+                    <p><i class="fas fa-users"></i> <strong>Population:</strong> ${commune.population}</p>
+                    <p><i class="fas fa-border-all"></i> <strong>Limites:</strong> ${commune.limites}</p>
+                    <p><i class="fas fa-map-marker-alt"></i> <strong>Quartiers principaux:</strong></p>
+                    <ul>
+                        ${commune.quartiers.map(q => `<li>${q}</li>`).join('')}
+                    </ul>
+                </div>
+            </div>
+        `;
+    };
+
+    // Options personnalisées pour les popups
+    const customOptions = {
+        maxWidth: 300,
+        className: 'custom-popup'
+    };
+
+    // Ajouter les marqueurs sur la carte
+    for (let key in communes) {
+        const commune = communes[key];
+        L.marker(commune.coords)
+         .bindPopup(customPopup(commune), customOptions)
+         .addTo(map);
+    }
+
+    // Interaction avec la liste des communes
+    document.querySelectorAll('.communes-list li').forEach(item => {
+        item.addEventListener('click', function() {
+            const communeKey = this.dataset.commune;
+            if (communes[communeKey]) {
+                map.setView(communes[communeKey].coords, 14);
+                // Mettre à jour les informations de la commune sélectionnée
+                updateCommuneInfo(communes[communeKey]);
+            }
+        });
+    });
+
+    // Fonction pour mettre à jour les informations de la commune
+    function updateCommuneInfo(commune) {
+        const infoDiv = document.querySelector('.commune-details');
+        if (infoDiv) {
+            infoDiv.innerHTML = `
+                <h3>${commune.nom}</h3>
+                <p><i class="fas fa-chart-area"></i> Superficie: ${commune.superficie}</p>
+                <p><i class="fas fa-users"></i> Population: ${commune.population}</p>
+                <p><i class="fas fa-border-all"></i> Limites: ${commune.limites}</p>
+            `;
+        }
+    }
+});
