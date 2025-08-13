@@ -1,0 +1,283 @@
+/* Variables de couleurs unifiées pour tout le site */
+:root {
+    --primary-color: #07411E;
+    --primary-dark: #052E15;
+    --primary-light: #0A5C2B;
+    --secondary-color: #ABC41B;
+    --secondary-dark: #8FA118;
+    --secondary-light: #C4DE1F;
+    --accent-color: #FFB100;
+    --accent-dark: #E69D00;
+    --accent-light: #FFC033;
+    --text-color: #333333;
+    --text-light: #666666;
+    --light-text: #FFFFFF;
+    --background-light: #F5F7F5;
+    --background-alt: #E8ECE8;
+    --shadow: 0 2px 5px rgba(0,0,0,0.1);
+    --shadow-large: 0 5px 15px rgba(0,0,0,0.15);
+    --transition: all 0.3s ease;
+    --dark-bg: #1A1A1A;
+    --dark-nav: #2D2D2D;
+    --dark-text: #FFFFFF;
+}
+
+/* Styles de base unifiés */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--background-light);
+}
+
+/* Headers unifiés */
+header {
+    background: var(--primary-color);
+    color: var(--light-text);
+}
+
+.nav-links a {
+    color: var(--light-text);
+    transition: var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--secondary-color);
+}
+
+/* Boutons unifiés */
+.btn-primary {
+    background: var(--primary-color);
+    color: var(--light-text);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: var(--secondary-color);
+    color: var(--light-text);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-secondary:hover {
+    background: var(--secondary-dark);
+    transform: translateY(-1px);
+}
+
+.btn-accent {
+    background: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-accent:hover {
+    background: var(--accent-dark);
+    transform: translateY(-1px);
+}
+
+/* Cartes unifiées */
+.card {
+    background: var(--light-text);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-large);
+}
+
+/* Formulaires unifiés */
+input, select, textarea {
+    padding: 10px 12px;
+    border: 1px solid var(--background-alt);
+    border-radius: 6px;
+    font-size: 0.9em;
+    transition: var(--transition);
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 2px rgba(171, 196, 27, 0.2);
+}
+
+/* Tableaux unifiés */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--light-text);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+th {
+    background: var(--primary-color);
+    color: var(--light-text);
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+}
+
+td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--background-alt);
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* Titres unifiés */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-color);
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* Liens unifiés */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+/* Footer unifié */
+footer {
+    background: var(--primary-color);
+    color: var(--light-text);
+    padding: 40px 0 20px;
+}
+
+footer h4 {
+    color: var(--secondary-color);
+}
+
+footer a {
+    color: var(--light-text);
+}
+
+footer a:hover {
+    color: var(--secondary-color);
+}
+
+/* Alertes et messages unifiés */
+.alert {
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.alert-success {
+    background: rgba(171, 196, 27, 0.1);
+    color: var(--secondary-dark);
+    border: 1px solid var(--secondary-color);
+}
+
+.alert-error {
+    background: rgba(231, 77, 60, 0.1);
+    color: #c0392b;
+    border: 1px solid #e74c3c;
+}
+
+.alert-warning {
+    background: rgba(255, 177, 0, 0.1);
+    color: var(--accent-dark);
+    border: 1px solid var(--accent-color);
+}
+
+.alert-info {
+    background: rgba(7, 65, 30, 0.1);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+/* Badges unifiés */
+.badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 600;
+}
+
+.badge-primary {
+    background: var(--primary-color);
+    color: var(--light-text);
+}
+
+.badge-secondary {
+    background: var(--secondary-color);
+    color: var(--light-text);
+}
+
+.badge-accent {
+    background: var(--accent-color);
+    color: var(--text-color);
+}
+
+/* Utilitaires */
+.text-primary { color: var(--primary-color); }
+.text-secondary { color: var(--secondary-color); }
+.text-accent { color: var(--accent-color); }
+.text-light { color: var(--text-light); }
+.text-white { color: var(--light-text); }
+
+.bg-primary { background: var(--primary-color); }
+.bg-secondary { background: var(--secondary-color); }
+.bg-accent { background: var(--accent-color); }
+.bg-light { background: var(--background-light); }
+.bg-white { background: var(--light-text); }
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.5em; }
+    h3 { font-size: 1.2em; }
+    
+    .card {
+        padding: 15px;
+    }
+    
+    input, select, textarea {
+        font-size: 16px; /* Évite le zoom sur iOS */
+    }
+} 

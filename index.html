@@ -22,7 +22,9 @@
     <nav class="main-nav">
         <div class="nav-container">
             <div class="logo">
-                <img src="images/logo.png" alt="Logo Keur Massar Social">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Logo Keur Massar Social">
+                </a>
             </div>
 
             <div class="nav-elements">
@@ -40,10 +42,11 @@
                             <i class="fas fa-chevron-down"></i>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="pages/annuaire.html#entreprises">Entreprises</a></li>
-                            <li><a href="pages/annuaire.html#associations">Associations</a></li>
-                            <li><a href="pages/annuaire.html#artisans">Artisans</a></li>
-                            <li><a href="pages/annuaire.html#cooperatives">Cooperatives</a></li>
+                            <li><a href="pages/entreprises.html">Entreprises</a></li>
+                            <li><a href="pages/G.I.E.html">G.I.E</a></li>
+                            <li><a href="pages/association.html">Associations</a></li>
+                            <li><a href="pages/fondation.html">Fondation</a></li>
+                            <li><a href="pages/cooperatives.html">Cooperatives</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -52,23 +55,10 @@
                             <span>Carte</span>
                         </a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item">
                         <a href="pages/actualites.html">
                             <i class="fas fa-newspaper"></i>
                             <span>Actualités</span>
-                            <i class="fas fa-chevron-down"></i>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="pages/actualites.html#evenements">Événements</a></li>
-                            <li><a href="pages/actualites.html#news">Nouvelles</a></li>
-                            <li><a href="pages/actualites.html#projets">Projets</a></li>
-                            <li><a href="pages/actualites.html#blog">Blog</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a href="pages/G.I.E.html">
-                            <i class="fas fa-building"></i>
-                            <span>G.I.E</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -80,29 +70,16 @@
                 </ul>
 
                 <div class="nav-buttons">
-                    <button class="search-btn">
-                        <i class="fas fa-search"></i>
-                    </button>
-                    <button class="theme-toggle">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                    <button class="menu-toggle">
-                        <i class="fas fa-bars"></i>
-                    </button>
+                    <a href="user-login.html" class="member-btn" title="Espace membre">
+                        <i class="fas fa-user"></i>
+                        <span>Espace membre</span>
+                    </a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Barre de recherche -->
-    <div class="search-overlay">
-        <div class="search-container">
-            <input type="text" placeholder="Rechercher...">
-            <button class="close-search">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-    </div>
+
 </header>
 
     <main>
@@ -146,28 +123,61 @@
                         <div class="partners-track">
                             <!-- Logo 1 -->
                             <div class="partner-logo">
-                                <img src="images/partners/corpafrica" alt="Mairie de Keur Massar">
+                                <img src="images/partners/corpafrica" alt="Corp Africa" onerror="this.src='images/logo.png'">
                                 <span class="partner-name">Corp Africa</span>
                             </div>
                             <!-- Logo 2 -->
                             <div class="partner-logo">
-                                <img src="images/partners/der" alt="DER/FJ">
+                                <img src="images/partners/der" alt="DER/FJ" onerror="this.src='images/logo.png'">
                                 <span class="partner-name">DER/FJ</span>
                             </div>
                             <!-- Logo 3 -->
                             <div class="partner-logo">
-                                <img src="images/partners/adpme" alt="ADEPME">
+                                <img src="images/partners/adpme" alt="ADEPME" onerror="this.src='images/logo.png'">
                                 <span class="partner-name">ADEPME</span>
                             </div>
                             <!-- Logo 4 -->
                             <div class="partner-logo">
-                                <img src="images/partners/dakar" alt="3FPT">
+                                <img src="images/partners/dakar" alt="Ville de Dakar" onerror="this.src='images/logo.png'">
                                 <span class="partner-name">Ville de Dakar</span>
                             </div>
                             <!-- Logo 5 -->
                             <div class="partner-logo">
-                                <img src="images/partners/rabat" alt="ONFP">
+                                <img src="images/partners/rabat" alt="Ville de Rabat" onerror="this.src='images/logo.png'">
                                 <span class="partner-name">Ville de Rabat</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="president-message">
+            <div class="president-container">
+                <div class="president-content">
+                    <div class="president-image" data-aos="fade-right">
+                        <img src="images/PRESIDENT CDKM.png" alt="Photo du Président" onerror="this.src='images/testimonials/person1.jpg'">
+                        <div class="president-info">
+                            <h4>M. Babacar GUEYE</h4>
+                            <span class="president-title">Président du Conseil Départemental de Keur Massar</span>
+                        </div>
+                    </div>
+                    <div class="president-text" data-aos="fade-left">
+                        <div class="message-header">
+                            <h2><i class="fas fa-quote-left"></i> Mot du Président</h2>
+                            <div class="quote-decoration">
+                                <i class="fas fa-quote-right"></i>
+                            </div>
+                        </div>
+                        <div class="message-content">
+                            <p>Chers partenaires et membres de notre communauté,</p>
+                            <p>Au nom de toute l'équipe de la Plateforme des Acteurs de l'Economie Sociale, Solidaire et Environnementale de Keur Massar (PAESSE), je suis honoré de vous accueillir sur cette plateforme numérique qui représente un pas important vers la modernisation et la visibilité de notre écosystème économique local.</p>
+                            <p>Notre mission est de créer un pont entre les différents acteurs de l'économie sociale et solidaire de Keur Massar, en facilitant les échanges, en promouvant les bonnes pratiques et en encourageant les synergies pour un développement durable de notre territoire.</p>
+                            <p>Cette plateforme vous permettra de découvrir plus de 650 acteurs locaux, de suivre nos actualités, de localiser les initiatives sur notre carte interactive et de vous connecter avec les partenaires qui partagent nos valeurs de solidarité et d'impact social.</p>
+                            <p>Ensemble, construisons un avenir plus inclusif et prospère pour Keur Massar.</p>
+                            <div class="president-signature">
+                                <span class="signature-text">M. Babacar GUEYE</span>
+                                <span class="signature-title">Président du Conseil Départemental de Keur Massar</span>
                             </div>
                         </div>
                     </div>
@@ -179,7 +189,7 @@
             <div class="stats-wrapper">
                 <div class="stats-header">
                     <h2><i class="fas fa-chart-bar"></i> Notre Impact en Chiffres</h2>
-                    <p>Découvrez l'impact de notre réseau à Keur Massar</p>
+                    <p>Découvrez l'impact de notre plateforme des acteurs de l'économie sociale, solidaire et environnementale de Keur Massar</p>
                 </div>
 
                 <div class="stats-container">
@@ -191,10 +201,10 @@
                                     <i class="fas fa-people-group"></i>
                                 </div>
                                 <div class="stat-content">
-                                    <div class="stat-number" data-category="gieActifs" data-target="150">0</div>
+                                    <div class="stat-number" id="gie-count-stat" data-category="gieActifs" data-target="600">600</div>
                                     <h3>G.I.E Actifs</h3>
                                     <div class="stat-progress">
-                                        <div class="progress-bar" style="width: 75%"></div>
+                                        <div class="progress-bar" id="gie-progress" style="width: 0%"></div>
                                     </div>
                                 </div>
                             </div>
@@ -203,13 +213,29 @@
                         <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
                             <div class="stat-card">
                                 <div class="stat-icon">
-                                    <i class="fas fa-users"></i>
+                                    <i class="fas fa-handshake"></i>
                                 </div>
                                 <div class="stat-content">
-                                    <div class="stat-number" data-category="membres" data-target="2500">0</div>
-                                    <h3>Membres</h3>
+                                    <div class="stat-number" id="association-count-stat" data-category="associations" data-target="25">25</div>
+                                    <h3>Associations</h3>
                                     <div class="stat-progress">
-                                        <div class="progress-bar" style="width: 85%"></div>
+                                        <div class="progress-bar" id="association-progress" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Statistique Entreprises -->
+                        <div class="stat-item" data-aos="fade-up" data-aos-delay="150">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-number" id="entreprises-count-stat" data-category="entreprises" data-target="6">6</div>
+                                    <h3>Entreprises</h3>
+                                    <div class="stat-progress">
+                                        <div class="progress-bar" id="entreprises-progress" style="width: 0%"></div>
                                     </div>
                                 </div>
                             </div>
@@ -218,28 +244,44 @@
                         <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
                             <div class="stat-card">
                                 <div class="stat-icon">
-                                    <i class="fas fa-handshake"></i>
+                                    <i class="fas fa-users"></i>
                                 </div>
                                 <div class="stat-content">
-                                    <div class="stat-number" data-category="partenaires" data-target="45">0</div>
-                                    <h3>Partenaires</h3>
+                                    <div class="stat-number" id="members-count-stat" data-category="membres" data-target="650">650</div>
+                                    <h3>Membres</h3>
                                     <div class="stat-progress">
-                                        <div class="progress-bar" style="width: 65%"></div>
+                                        <div class="progress-bar" id="members-progress" style="width: 0%"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
+                        <div class="stat-item" data-aos="fade-up" data-aos-delay="250">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-number" id="communes-count-stat" data-category="communes" data-target="6">6</div>
+                                    <h3>Communes Couvertes</h3>
+                                    <div class="stat-progress">
+                                        <div class="progress-bar" id="communes-progress" style="width: 100%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cinquième statistique -->
                         <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
                             <div class="stat-card">
                                 <div class="stat-icon">
-                                    <i class="fas fa-tasks-alt"></i>
+                                    <i class="fas fa-industry"></i>
                                 </div>
                                 <div class="stat-content">
-                                    <div class="stat-number" data-category="projetsRealises" data-target="85">0</div>
-                                    <h3>Projets Réalisés</h3>
+                                    <div class="stat-number" id="secteurs-count-stat" data-category="secteurs" data-target="15">15</div>
+                                    <h3>Secteurs d'Activité</h3>
                                     <div class="stat-progress">
-                                        <div class="progress-bar" style="width: 70%"></div>
+                                        <div class="progress-bar" id="secteurs-progress" style="width: 0%"></div>
                                     </div>
                                 </div>
                             </div>
@@ -248,26 +290,33 @@
 
                     <!-- Graphiques et statistiques détaillées -->
                     <div class="stats-details">
-                        <div class="chart-container" data-aos="fade-up" data-aos-delay="400">
-                            <h3><i class="fas fa-chart-pie"></i> Répartition par Secteur</h3>
+                        <div class="chart-container" data-aos="fade-up" data-aos-delay="500">
+                            <h3><i class="fas fa-chart-pie"></i> Répartition des Acteurs</h3>
                             <canvas id="sectorsChart"></canvas>
                         </div>
                         
-                        <div class="demographics-container" data-aos="fade-up" data-aos-delay="500">
-                            <h3><i class="fas fa-users-viewfinder"></i> Composition</h3>
+                        <div class="demographics-container" data-aos="fade-up" data-aos-delay="600">
+                            <h3><i class="fas fa-users-viewfinder"></i> Répartition par Type</h3>
                             <div class="demographic-stats">
                                 <div class="demographic-item">
-                                    <span class="label"><i class="fas fa-female"></i> Femmes</span>
+                                    <span class="label"><i class="fas fa-people-group"></i> G.I.E</span>
                                     <div class="progress-bar-container">
-                                        <div class="progress-bar" style="width: 65%"></div>
-                                        <span class="percentage">65%</span>
+                                        <div class="progress-bar" id="gie-demographic-progress" style="width: 93.3%"></div>
+                                        <span class="percentage" id="gie-demographic-percentage">93.3%</span>
                                     </div>
                                 </div>
                                 <div class="demographic-item">
-                                    <span class="label"><i class="fas fa-user-graduate"></i> Jeunes</span>
+                                    <span class="label"><i class="fas fa-handshake"></i> Associations</span>
                                     <div class="progress-bar-container">
-                                        <div class="progress-bar" style="width: 45%"></div>
-                                        <span class="percentage">45%</span>
+                                        <div class="progress-bar" id="association-demographic-progress" style="width: 3.8%"></div>
+                                        <span class="percentage" id="association-demographic-percentage">3.8%</span>
+                                    </div>
+                                </div>
+                                <div class="demographic-item">
+                                    <span class="label"><i class="fas fa-building"></i> Entreprises</span>
+                                    <div class="progress-bar-container">
+                                        <div class="progress-bar" id="entreprise-demographic-progress" style="width: 0.9%"></div>
+                                        <span class="percentage" id="entreprise-demographic-percentage">0.9%</span>
                                     </div>
                                 </div>
                             </div>
@@ -305,7 +354,7 @@
                 <!-- Article 1 -->
                 <article class="news-card" data-aos="fade-up">
                     <div class="news-image">
-                        <img src="images/news/news3" alt="Formation GIE">
+                        <img src="images/news/news3" alt="Formation GIE" onerror="this.src='images/hero/slide1.jpg'">
                         <span class="news-category">Formation</span>
                     </div>
                     <div class="news-content">
@@ -322,7 +371,7 @@
                 <!-- Article 2 -->
                 <article class="news-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="news-image">
-                        <img src="images/news/news1" alt="Projet Agriculture">
+                        <img src="images/news/news1" alt="Projet Agriculture" onerror="this.src='images/hero/slide2.png'">
                         <span class="news-category">Projet</span>
                     </div>
                     <div class="news-content">
@@ -339,7 +388,7 @@
                 <!-- Article 3 -->
                 <article class="news-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="news-image">
-                        <img src="images/news/news2" alt="Nouveau Partenariat">
+                        <img src="images/news/news2" alt="Nouveau Partenariat" onerror="this.src='images/hero/slide3.jpg'">
                         <span class="news-category">Partenariat</span>
                     </div>
                     <div class="news-content">
@@ -359,6 +408,206 @@
                     Voir toutes les actualités
                     <i class="fas fa-arrow-right"></i>
                 </a>
+            </div>
+        </section>
+
+        <!-- Section Enregistrement -->
+        <section class="registration-section">
+            <div class="registration-container">
+                <div class="registration-header">
+                    <h2><i class="fas fa-user-plus"></i> Rejoignez Notre Réseau</h2>
+                    <p>Enregistrez votre organisation et faites partie de notre écosystème économique local</p>
+                </div>
+                
+                <div class="registration-content">
+                    <div class="registration-info">
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h3>G.I.E</h3>
+                            <p>Groupements d'Intérêt Économique pour développer vos activités commerciales et artisanales. Rejoignez notre réseau pour bénéficier d'un accompagnement personnalisé et accéder à de nouvelles opportunités de développement économique dans la région de Keur Massar.</p>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Accès aux marchés locaux</li>
+                                <li><i class="fas fa-check"></i> Formation et accompagnement</li>
+                                <li><i class="fas fa-check"></i> Financement facilité</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3>Associations</h3>
+                            <p>Organisations à but non lucratif pour promouvoir le développement social et culturel. Intégrez notre plateforme pour renforcer votre impact dans la communauté et créer des synergies avec d'autres acteurs locaux engagés dans le développement durable de Keur Massar.</p>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Visibilité accrue</li>
+                                <li><i class="fas fa-check"></i> Partenariats stratégiques</li>
+                                <li><i class="fas fa-check"></i> Soutien aux projets</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h3>Entreprises</h3>
+                            <p>Structures commerciales et industrielles pour dynamiser l'économie locale. Rejoignez notre écosystème entrepreneurial pour développer votre réseau d'affaires, accéder à de nouveaux marchés et bénéficier d'un accompagnement technique adapté aux besoins spécifiques de votre secteur d'activité.</p>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Réseau d'affaires</li>
+                                <li><i class="fas fa-check"></i> Opportunités commerciales</li>
+                                <li><i class="fas fa-check"></i> Accompagnement technique</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <h3>Coopératives</h3>
+                            <p>Organisations coopératives pour renforcer la solidarité économique. Intégrez notre réseau coopératif pour mutualiser vos ressources, partager vos expériences et contribuer ensemble au développement d'une économie sociale et solidaire innovante dans la région de Keur Massar.</p>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Mutualisation des ressources</li>
+                                <li><i class="fas fa-check"></i> Développement durable</li>
+                                <li><i class="fas fa-check"></i> Innovation sociale</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="registration-form-container">
+                        <div class="form-header">
+                            <h3><i class="fas fa-clipboard-list"></i> Demande d'Enregistrement</h3>
+                            <p>Remplissez ce formulaire pour soumettre votre demande d'enregistrement. Elle sera traitée par nos administrateurs dans les plus brefs délais.</p>
+                        </div>
+                        
+                        <form class="registration-form" id="registrationForm">
+                            <div class="form-group">
+                                <label for="org-type">Type d'Organisation *</label>
+                                <select id="org-type" name="org-type" required>
+                                    <option value="">Sélectionnez un type</option>
+                                    <option value="gie">G.I.E (Groupement d'Intérêt Économique)</option>
+                                    <option value="association">Association</option>
+                                    <option value="entreprise">Entreprise</option>
+                                    <option value="cooperative">Coopérative</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="org-status">Statut de l'Organisation *</label>
+                                <select id="org-status" name="org-status" required>
+                                    <option value="">Sélectionnez un statut</option>
+                                    <option value="formelle">Formelle</option>
+                                    <option value="informelle">Informelle</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="org-name">Nom de l'Organisation *</label>
+                                <input type="text" id="org-name" name="org-name" required placeholder="Nom officiel de votre organisation">
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="president">Président(e) / Dirigeant(e) *</label>
+                                    <input type="text" id="president" name="president" required placeholder="Nom complet">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Téléphone *</label>
+                                    <input type="tel" id="phone" name="phone" required placeholder="+221 XX XXX XX XX">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="email@exemple.com">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="commune">Commune *</label>
+                                <select id="commune" name="commune" required>
+                                    <option value="">Sélectionnez votre commune</option>
+                                    <option value="yeumbeul-nord">Yeumbeul Nord</option>
+                                    <option value="yeumbeul-sud">Yeumbeul Sud</option>
+                                    <option value="keur-massar-nord">Keur Massar Nord</option>
+                                    <option value="keur-massar-sud">Keur Massar Sud</option>
+                                    <option value="malika">Malika</option>
+                                    <option value="jaxaay-parcelles">Jaxaay-Parcelles</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="address">Adresse</label>
+                                <textarea id="address" name="address" rows="2" placeholder="Adresse complète de votre organisation"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="sector">Secteur d'Activité *</label>
+                                <select id="sector" name="sector" required>
+                                    <option value="">Sélectionnez un secteur</option>
+                                    <option value="agriculture">Agriculture</option>
+                                    <option value="artisanat">Artisanat</option>
+                                    <option value="commerce">Commerce</option>
+                                    <option value="education">Éducation</option>
+                                    <option value="sante">Santé</option>
+                                    <option value="environnement">Environnement</option>
+                                    <option value="technologie">Technologie</option>
+                                    <option value="services">Services</option>
+                                    <option value="autre">Autre</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="description">Description des Activités</label>
+                                <textarea id="description" name="description" rows="3" placeholder="Décrivez brièvement vos activités principales"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="members">Nombre de Membres</label>
+                                <input type="number" id="members" name="members" min="1" placeholder="Nombre de membres ou employés">
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="newsletter" name="newsletter">
+                                    <span class="checkmark"></span>
+                                    Je souhaite recevoir la newsletter et les actualités
+                                </label>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="terms" name="terms" required>
+                                    <span class="checkmark"></span>
+                                    J'accepte les <a href="#" class="terms-link">conditions d'utilisation</a> *
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane"></i>
+                                Soumettre ma Demande
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="registration-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">650+</div>
+                        <div class="stat-label">Organisations Enregistrées</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Secteurs d'Activité</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">6</div>
+                        <div class="stat-label">Communes Couvertes</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24h</div>
+                        <div class="stat-label">Délai de Validation</div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -410,8 +659,8 @@
                 <h4>Contact</h4>
                 <div class="contact-info">
                     <p><i class="fas fa-map-marker-alt"></i> Keur Massar, Dakar, Sénégal</p>
-                    <p><i class="fas fa-phone"></i> +221 XX XXX XX XX</p>
-                    <p><i class="fas fa-envelope"></i> contact@keurmassar-social.sn</p>
+                    <p><i class="fas fa-phone"></i> +221 33 878 29 60</p>
+                    <p><i class="fas fa-envelope"></i> contact@paessekm.com</p>
                 </div>
             </div>
 
@@ -427,7 +676,7 @@
                     <h5>Newsletter</h5>
                     <form class="newsletter-form">
                         <input type="email" placeholder="Votre email">
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        <button type="submit" title="S'inscrire à la newsletter"><i class="fas fa-paper-plane"></i></button>
                     </form>
                 </div>
             </div>
@@ -439,22 +688,209 @@
                 <div class="footer-bottom-links">
                     <a href="#">Mentions légales</a> |
                     <a href="#">Politique de confidentialité</a> |
-                    <a href="#">Conçu par Negus Agency</a>
+                    <a href="https://negus-agency.com/">Conçu par Negus Agency</a> |
+                    <a href="admin-login.html" class="admin-login-btn">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Admin</span>
+                    </a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <script src="js/siteAuthUI.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/stats.js"></script>
-   <!-- Ajouter dans le head de votre HTML -->
+
+<!-- Ajouter dans le head de votre HTML -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="js/siteUserStorage.js"></script>
+    
+    <!-- Script pour le graphique Répartition des Acteurs -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('sectorsChart');
+            if (ctx && typeof Chart !== 'undefined') {
+                new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['G.I.E', 'Associations', 'Entreprises', 'Coopératives', 'Fondations'],
+                        datasets: [{
+                            data: [600, 25, 6, 15, 4],
+                            backgroundColor: ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7'],
+                            borderWidth: 2,
+                            borderColor: '#fff'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: {
+                                    color: '#fff',
+                                    padding: 15,
+                                    usePointStyle: true
+                                }
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        const label = context.label;
+                                        const value = context.parsed;
+                                        const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                        const percentage = ((value / total) * 100).toFixed(1);
+                                        return `${label}: ${value} (${percentage}%)`;
+                                    }
+                                }
+                            }
+                        },
+                        animation: {
+                            duration: 2000
+                        }
+                    }
+                });
+            }
+        });
+    </script>
     <script>
         AOS.init({
             duration: 800,
             once: true
         });
     </script>
+  <script src="js/siteAuthUI.js"></script>
+   <script>
+       // Gestion du formulaire d'enregistrement réseau
+       document.addEventListener('DOMContentLoaded', function() {
+           console.log('Script de formulaire chargé');
+           const registrationForm = document.getElementById('registrationForm');
+           console.log('Formulaire trouvé:', registrationForm);
+           
+           if (registrationForm) {
+               registrationForm.addEventListener('submit', function(e) {
+                   e.preventDefault();
+                   console.log('Soumission du formulaire détectée');
+                   
+                   // Récupération des données du formulaire
+                   const formData = new FormData(registrationForm);
+                   const orgData = {
+                       type: formData.get('org-type'),
+                       status: formData.get('org-status'),
+                       nom: formData.get('org-name'),
+                       president: formData.get('president'),
+                       telephone: formData.get('phone'),
+                       email: formData.get('email') || '',
+                       commune: formData.get('commune'),
+                       adresse: formData.get('address') || '',
+                       secteur: formData.get('sector'),
+                       description: formData.get('description') || '',
+                       membres: formData.get('members') || '',
+                       newsletter: formData.get('newsletter') === 'on',
+                       dateCreation: new Date().toISOString(),
+                       statut: 'pending'
+                   };
+                   
+                   console.log('Données du formulaire:', orgData);
+                   
+                   // Génération d'un ID unique
+                   const requestId = 'REQ_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+                   
+                   // Création de l'utilisateur temporaire pour la demande
+                   const tempUser = {
+                       id: requestId,
+                       nom: orgData.president,
+                       email: orgData.email || `temp_${requestId}@paessekm.sn`,
+                       password: 'temp_password_' + Math.random().toString(36).substr(2, 9),
+                       type: orgData.type === 'gie' ? 'GIE' : orgData.type === 'association' ? 'ASSO' : 'AUTRE',
+                       entityId: requestId,
+                       entityData: orgData,
+                       status: 'pending',
+                       createdAt: new Date().toISOString(),
+                       approvedAt: null
+                   };
+                   
+                   console.log('Utilisateur temporaire créé:', tempUser);
+                   console.log('siteUserStorage disponible:', typeof siteUserStorage !== 'undefined');
+                   
+                   // Sauvegarde dans le stockage local
+                   if (typeof siteUserStorage !== 'undefined') {
+                       try {
+                           // Utilisation de l'API correcte de siteUserStorage
+                           const newUser = siteUserStorage.addUser({
+                               type: tempUser.type,
+                               entityId: tempUser.entityId,
+                               email: tempUser.email,
+                               password: tempUser.password,
+                               name: tempUser.nom
+                           });
+                           
+                           console.log('Utilisateur ajouté avec succès:', newUser);
+                           
+                           // Stockage des données supplémentaires dans localStorage
+                           const additionalData = {
+                               ...tempUser,
+                               id: newUser.id // Utiliser l'ID généré par siteUserStorage
+                           };
+                           
+                           // Sauvegarder les données complètes dans un autre stockage
+                           const existingRequests = JSON.parse(localStorage.getItem('registrationRequests') || '[]');
+                           existingRequests.push(additionalData);
+                           localStorage.setItem('registrationRequests', JSON.stringify(existingRequests));
+                           
+                           // Affichage du message de succès
+                           showRegistrationMessage('success', 'Votre demande d\'enregistrement a été soumise avec succès ! Elle sera traitée par nos administrateurs dans les plus brefs délais.');
+                           
+                           // Réinitialisation du formulaire
+                           registrationForm.reset();
+                       } catch (error) {
+                           console.error('Erreur lors de l\'ajout:', error);
+                           showRegistrationMessage('error', 'Erreur lors de la soumission: ' + error.message);
+                       }
+                   } else {
+                       console.error('siteUserStorage non disponible');
+                       showRegistrationMessage('error', 'Erreur: Système de stockage non disponible. Veuillez réessayer.');
+                   }
+               });
+           }
+           
+           function showRegistrationMessage(type, message) {
+               console.log('Affichage message:', type, message);
+               
+               // Suppression des messages existants
+               const existingMessages = document.querySelectorAll('.registration-message');
+               existingMessages.forEach(msg => msg.remove());
+               
+               // Création du nouveau message
+               const messageDiv = document.createElement('div');
+               messageDiv.className = `registration-message ${type}`;
+               messageDiv.innerHTML = `
+                   <div class="message-content">
+                       <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
+                       <span>${message}</span>
+                       <button class="message-close" onclick="this.parentElement.parentElement.remove()">
+                           <i class="fas fa-times"></i>
+                       </button>
+                   </div>
+               `;
+               
+               // Insertion du message
+               const formContainer = document.querySelector('.registration-form-container');
+               if (formContainer) {
+                   formContainer.insertBefore(messageDiv, formContainer.firstChild);
+               }
+               
+               // Auto-suppression après 8 secondes pour les messages de succès
+               if (type === 'success') {
+                   setTimeout(() => {
+                       if (messageDiv.parentElement) {
+                           messageDiv.remove();
+                       }
+                   }, 8000);
+               }
+           }
+       });
+   </script>
 </body>
 </html>

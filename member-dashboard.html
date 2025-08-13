@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mon espace - Tableau de bord</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #035525;
+      --primary-dark: #0e7e39;
+      --primary-light: #6f86e7;
+      --secondary-color: #858796;
+      --accent-color: #ffb100;
+      --accent-dark: #e69c00;
+      --text-color: #333;
+      --text-light: #6c757d;
+      --background-light: #f8f9fc;
+      --background-alt: #eaecf4;
+      --shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+      --shadow-large: 0 0.5rem 2rem 0 rgba(58, 59, 69, 0.2);
+      --transition: all 0.3s ease;
+    }
+
+    body {
+      background: linear-gradient(135deg, #f8f9fc 0%, #eaecf4 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+
+    /* Header moderne */
+    .member-header {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+      color: white;
+      padding: 2rem 0;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .member-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+      animation: shimmer 3s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    .member-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .member-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-dark) 100%);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.5rem;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      transition: var(--transition);
+    }
+
+    .member-avatar:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    .member-info h1 {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .member-info .muted {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .header-btn {
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 25px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: var(--transition);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+    }
+
+    .header-btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Sections principales */
+    .dashboard-sections {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .dashboard-section {
+      background: white;
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      transition: var(--transition);
+    }
+
+    .dashboard-section:hover {
+      box-shadow: var(--shadow-large);
+      transform: translateY(-2px);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--background-alt);
+    }
+
+    .section-header h2 {
+      margin: 0;
+      color: var(--primary-color);
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .section-header i {
+      color: var(--accent-color);
+      font-size: 1.3rem;
+    }
+
+    /* Cartes d'actions */
+    .actions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .action-card {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+      color: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      text-align: center;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .action-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .action-card:hover::before {
+      left: 100%;
+    }
+
+    .action-card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      color: white;
+      text-decoration: none;
+    }
+
+    .action-card i {
+      font-size: 2rem;
+      color: var(--accent-color);
+    }
+
+    .action-card h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .action-card p {
+      margin: 0;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    /* Cartes de statistiques */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+      border: 2px solid var(--background-alt);
+      transition: var(--transition);
+    }
+
+    .stat-card:hover {
+      border-color: var(--primary-color);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-large);
+    }
+
+    .stat-card i {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-card .stat-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-color);
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-card .stat-label {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    /* Cartes d'informations */
+    .info-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      border-left: 4px solid var(--primary-color);
+      transition: var(--transition);
+    }
+
+    .info-card:hover {
+      transform: translateX(5px);
+      box-shadow: var(--shadow-large);
+    }
+
+    .info-card h3 {
+      margin: 0 0 1rem 0;
+      color: var(--primary-color);
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .info-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--background-alt);
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+    }
+
+    .info-label {
+      font-weight: 500;
+      color: var(--text-color);
+    }
+
+    .info-value {
+      color: var(--text-light);
+      font-weight: 600;
+    }
+
+    /* Badges */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      border: 1px solid;
+    }
+
+    .badge-type {
+      background: #e8f5e9;
+      color: #1e8e4c;
+      border-color: #b7dfbf;
+    }
+
+    .badge-status {
+      background: #fff7ed;
+      color: #9a6700;
+      border-color: #f2cf99;
+    }
+
+    .badge-status.status-actif {
+      background: #ecfdf5;
+      color: #047857;
+      border-color: #a7f3d0;
+    }
+
+    .badge-verified {
+      background: #ecfdf5;
+      color: #065f46;
+      border-color: #a7f3d0;
+    }
+
+    .badge-commune {
+      background: #e0f2fe;
+      color: #075985;
+      border-color: #93c5fd;
+    }
+
+    .badge-secteur {
+      background: #ede9fe;
+      color: #5b21b6;
+      border-color: #c4b5fd;
+    }
+
+    /* Section d'aide */
+    .help-section {
+      background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-dark) 100%);
+      color: white;
+      padding: 2rem;
+      border-radius: 15px;
+      text-align: center;
+    }
+
+    .help-section h2 {
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    .help-section p {
+      margin: 0;
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .dashboard-sections {
+        grid-template-columns: 1fr;
+      }
+
+      .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+      }
+
+      .header-right {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .actions-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .member-container {
+        padding: 0 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .header-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+      }
+
+      .member-avatar {
+        width: 60px;
+        height: 60px;
+        font-size: 1.2rem;
+      }
+
+      .member-info h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header moderne -->
+  <header class="member-header">
+    <div class="member-container">
+      <div class="header-content">
+        <div class="header-left">
+          <div class="member-avatar" id="member-avatar">ME</div>
+          <div class="member-info">
+            <h1><i class="fas fa-user"></i> Mon espace</h1>
+            <div class="muted" id="member-welcome">Bienvenue dans votre tableau de bord</div>
+          </div>
+        </div>
+        <div class="header-right">
+          <a href="index.html" class="header-btn">
+            <i class="fas fa-home"></i>
+            <span>Accueil</span>
+          </a>
+          <button id="theme-toggle" class="header-btn">
+            <i class="fas fa-moon"></i>
+            <span>Thème</span>
+          </button>
+          <button id="member-edit" class="header-btn">
+            <i class="fas fa-user-cog"></i>
+            <span>Profil</span>
+          </button>
+          <button id="member-logout" class="header-btn">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Déconnexion</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="member-container">
+    <!-- Sections principales -->
+    <div class="dashboard-sections">
+      <div class="main-content">
+        <!-- Section Actions -->
+        <section class="dashboard-section" data-aos="fade-up">
+          <div class="section-header">
+            <i class="fas fa-rocket"></i>
+            <h2>Actions rapides</h2>
+          </div>
+          <div class="actions-grid">
+            <a href="pages/G.I.E.html" class="action-card" data-aos="zoom-in" data-aos-delay="100">
+              <i class="fas fa-building"></i>
+              <h3>G.I.E</h3>
+              <p>Consulter les Groupements d'Intérêt Économique</p>
+            </a>
+            <a href="pages/association.html" class="action-card" data-aos="zoom-in" data-aos-delay="200">
+              <i class="fas fa-users"></i>
+              <h3>Associations</h3>
+              <p>Découvrir les associations locales</p>
+            </a>
+            <a href="pages/cooperatives.html" class="action-card" data-aos="zoom-in" data-aos-delay="300">
+              <i class="fas fa-handshake"></i>
+              <h3>Coopératives</h3>
+              <p>Explorer les coopératives</p>
+            </a>
+            <a href="pages/entreprises.html" class="action-card" data-aos="zoom-in" data-aos-delay="400">
+              <i class="fas fa-industry"></i>
+              <h3>Entreprises</h3>
+              <p>Découvrir les entreprises</p>
+            </a>
+            <a href="pages/fondation.html" class="action-card" data-aos="zoom-in" data-aos-delay="500">
+              <i class="fas fa-heart"></i>
+              <h3>Fondations</h3>
+              <p>Découvrir les fondations</p>
+            </a>
+          </div>
+        </section>
+
+        <!-- Section Statistiques -->
+        <section class="dashboard-section" data-aos="fade-up" data-aos-delay="200">
+          <div class="section-header">
+            <i class="fas fa-chart-bar"></i>
+            <h2>Statistiques</h2>
+          </div>
+          <div class="stats-grid">
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+              <i class="fas fa-building"></i>
+              <div class="stat-value">650</div>
+              <div class="stat-label">G.I.E</div>
+            </div>
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+              <i class="fas fa-users"></i>
+              <div class="stat-value">25</div>
+              <div class="stat-label">Associations</div>
+            </div>
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+              <i class="fas fa-handshake"></i>
+              <div class="stat-value">15</div>
+              <div class="stat-label">Coopératives</div>
+            </div>
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
+              <i class="fas fa-industry"></i>
+              <div class="stat-value">120</div>
+              <div class="stat-label">Entreprises</div>
+            </div>
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="500">
+              <i class="fas fa-heart"></i>
+              <div class="stat-value">4</div>
+              <div class="stat-label">Fondations</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section Détails de l'entité -->
+        <section class="dashboard-section" data-aos="fade-up" data-aos-delay="300">
+          <div class="section-header">
+            <i class="fas fa-id-card"></i>
+            <h2>Détails de mon entité</h2>
+          </div>
+          <div id="member-entity-card" class="info-card">
+            <p>Chargement des informations...</p>
+          </div>
+        </section>
+      </div>
+
+      <div class="sidebar">
+        <!-- Section Profil -->
+        <section class="dashboard-section" data-aos="fade-left">
+          <div class="section-header">
+            <i class="fas fa-user-circle"></i>
+            <h2>Mon profil</h2>
+          </div>
+          <div class="info-card">
+            <div class="info-item">
+              <span class="info-label">Nom</span>
+              <span class="info-value" id="member-name">—</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Type</span>
+              <span class="info-value" id="member-type">—</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Statut</span>
+              <span class="info-value">
+                <span class="badge badge-status status-actif">Actif</span>
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section Résumé -->
+        <section class="dashboard-section" data-aos="fade-left" data-aos-delay="200">
+          <div class="section-header">
+            <i class="fas fa-gauge"></i>
+            <h2>Résumé</h2>
+          </div>
+          <div class="info-card">
+            <div class="info-item">
+              <span class="info-label">Entité</span>
+              <span class="info-value" id="summary-entity">—</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Commune</span>
+              <span class="info-value" id="summary-commune">—</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Secteur</span>
+              <span class="info-value" id="summary-secteur">—</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section Aide -->
+        <section class="help-section" data-aos="fade-left" data-aos-delay="300">
+          <h2><i class="fas fa-life-ring"></i> Besoin d'aide ?</h2>
+          <p>Pour demander une mise à jour de vos informations (adresse, téléphone, etc.), contactez l'administration via le tableau de bord admin.</p>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Profil site user -->
+  <div class="site-profile-modal" id="site-profile-modal" style="display:none;">
+    <div class="backdrop" id="site-profile-backdrop"></div>
+    <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="site-profile-title">
+      <div class="header">
+        <h3 id="site-profile-title"><i class="fas fa-user"></i> Mon profil</h3>
+        <button class="gie-action-btn" id="site-profile-close"><i class="fas fa-times"></i></button>
+      </div>
+      <form class="gie-form" id="site-profile-form">
+        <div class="form-grid">
+          <input type="hidden" id="site-profile-id">
+          <div>
+            <label for="site-profile-name">Nom</label>
+            <input type="text" id="site-profile-name" required>
+          </div>
+          <div>
+            <label for="site-profile-email">Email</label>
+            <input type="email" id="site-profile-email" readonly>
+          </div>
+          <div>
+            <label for="site-profile-avatar">Avatar</label>
+            <input type="file" id="site-profile-avatar" accept="image/*">
+            <div class="avatar-preview" id="site-profile-avatar-preview" style="width:72px;height:72px;border-radius:50%;background:#f2f2f2;border:1px solid #eee;display:inline-flex;align-items:center;justify-content:center;overflow:hidden;color:#888;font-size:12px;margin-top:6px;">Aperçu</div>
+            <small>Formats image, taille conseillée ≤ 512x512</small>
+          </div>
+          <div>
+            <label for="site-profile-current">Mot de passe actuel</label>
+            <input type="password" id="site-profile-current" placeholder="Requis pour changer le mot de passe">
+          </div>
+          <div>
+            <label for="site-profile-new">Nouveau mot de passe</label>
+            <input type="password" id="site-profile-new" placeholder="Laisser vide pour ne pas changer">
+          </div>
+          <div>
+            <label for="site-profile-confirm">Confirmer le mot de passe</label>
+            <input type="password" id="site-profile-confirm" placeholder="Confirmer le nouveau mot de passe">
+          </div>
+        </div>
+        <div class="form-actions" style="margin-top:12px;">
+          <button type="submit" class="gie-action-btn"><i class="fas fa-save"></i> Enregistrer</button>
+          <button type="button" class="gie-action-btn" id="site-profile-cancel" style="background:#95a5a6;"><i class="fas fa-times"></i> Annuler</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/siteAuthUI.js"></script>
+  <script src="js/gieDatabase.js"></script>
+  <script src="js/associationDatabase.js"></script>
+  <script src="js/memberDashboard.js"></script>
+  <script>
+    // Vérifier que l'utilisateur est connecté
+    if (typeof siteAuth !== 'undefined' && !siteAuth.requireLogin()) {
+      // L'utilisateur sera redirigé automatiquement
+    } else {
+      AOS.init({
+        duration: 800,
+        once: true
+      });
+    }
+  </script>
+</body>
+</html> 

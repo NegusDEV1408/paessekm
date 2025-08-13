@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin - Keur Massar Social</title>
+    <link rel="stylesheet" href="css/unified-colors.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body class="admin-dashboard-body">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2><i class="fas fa-user-shield"></i> Admin</h2>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="active"><a href="#stats"><i class="fas fa-chart-pie"></i> Statistiques</a></li>
+            <li><a href="#news"><i class="fas fa-newspaper"></i> Actualités</a></li>
+            <li><a href="#users"><i class="fas fa-users"></i> Utilisateurs</a></li>
+            <li><a href="#members"><i class="fas fa-id-badge"></i> Gestion Membres</a></li>
+            <li><a href="#gie"><i class="fas fa-building"></i> Gestion G.I.E.</a></li>
+            <li><a href="#associations"><i class="fas fa-handshake"></i> Gestion Associations</a></li>
+            <li><a href="#settings"><i class="fas fa-cog"></i> Paramètres</a></li>
+            
+        </ul>
+    </aside>
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <div class="header-content">
+                <div class="header-left">
+                    <h1><i class="fas fa-tachometer-alt"></i> Tableau de bord</h1>
+                    <p class="header-subtitle">Gestion de la Plateforme des Acteurs de l'Economie Sociale, Solidaire et Environnementale de Keur Massar</p>
+                </div>
+                <div class="header-right">
+                    <a href="index.html" class="home-btn" title="Aller à l'accueil du site">
+                        <i class="fas fa-home"></i>
+                        <span>Accueil du site</span>
+                    </a>
+
+                    <div class="admin-info">
+                        <div class="admin-profile">
+                            <div class="admin-avatar" id="admin-avatar" aria-hidden="true">AD</div>
+                            <div class="admin-identity">
+                                <span class="admin-name" id="admin-name">Administrateur</span>
+                                <span class="admin-role" id="admin-role">Super Admin</span>
+                            </div>
+                            <div class="admin-profile-menu" id="admin-profile-menu">
+                                <button class="profile-toggle gie-action-btn" id="profile-toggle" title="Ouvrir le menu profil">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                                <ul class="profile-dropdown" id="profile-dropdown" style="display:none;">
+                                    <li><a href="#" id="profile-view-link"><i class="fas fa-user"></i> Mon profil</a></li>
+                                    
+                                    <li><a href="#" id="profile-logout-link"><i class="fas fa-sign-out-alt"></i> Déconnexion</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section id="stats" class="dashboard-section">
+            <h2><i class="fas fa-chart-line"></i> Statistiques Générales</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-title">G.I.E Actifs</span>
+                        <span class="stat-value" id="gie-count">150</span>
+                        <span class="stat-change positive">+12% ce mois</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-title">Associations</span>
+                        <span class="stat-value" id="association-count">25</span>
+                        <span class="stat-change positive">+5% ce mois</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-title">Membres</span>
+                        <span class="stat-value">2500</span>
+                        <span class="stat-change positive">+8% ce mois</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-title">Partenaires</span>
+                        <span class="stat-value">45</span>
+                        <span class="stat-change positive">+3% ce mois</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-title">Projets Réalisés</span>
+                        <span class="stat-value">85</span>
+                        <span class="stat-change positive">+15% ce mois</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-title">Quartiers Couverts</span>
+                        <span class="stat-value">12</span>
+                        <span class="stat-change positive">+2 ce mois</span>
+                    </div>
+                </div>
+            </div>
+            <div class="charts-container">
+                <div class="chart-wrapper">
+                    <h3>Répartition par Type</h3>
+                    <canvas id="adminChart"></canvas>
+                </div>
+                <div class="chart-wrapper">
+                    <h3>Évolution Mensuelle</h3>
+                    <canvas id="evolutionChart"></canvas>
+                </div>
+            </div>
+        </section>
+        <section id="news" class="dashboard-section">
+            <h2>Gestion des Actualités</h2>
+            <table class="admin-table">
+                <thead>
+                    <tr><th>Titre</th><th>Date</th><th>Catégorie</th><th>Actions</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Formation en gestion financière</td><td>15/03/2024</td><td>Formation</td><td><button>Modifier</button> <button>Supprimer</button></td></tr>
+                    <tr><td>Lancement projet agriculture urbaine</td><td>12/03/2024</td><td>Projet</td><td><button>Modifier</button> <button>Supprimer</button></td></tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="users" class="dashboard-section">
+            <h2>Gestion des Utilisateurs</h2>
+            <div class="gie-actions">
+                <button id="user-add-btn" class="gie-action-btn"><i class="fas fa-user-plus"></i> Ajouter un utilisateur</button>
+            </div>
+            <form id="user-form" class="gie-form" style="display:none; margin:16px 0; padding:16px; background:#f8f9fa; border-radius:8px;">
+                <div class="form-grid">
+                    <input type="hidden" id="user-id">
+                    <input type="text" id="user-nom" placeholder="Nom" required>
+                    <input type="email" id="user-email" placeholder="Email" required>
+                    <input type="password" id="user-password" placeholder="Mot de passe (min. 4)" required>
+                    <select id="user-role" required>
+                        <option value="Éditeur">Éditeur</option>
+                        <option value="Admin">Admin</option>
+                        <option value="Super Admin">Super Admin</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="gie-action-btn"><i class="fas fa-save"></i> Enregistrer</button>
+                    <button type="button" id="user-cancel-btn" class="gie-action-btn" style="background:#95a5a6;"><i class="fas fa-times"></i> Annuler</button>
+                </div>
+            </form>
+            <table class="admin-table" id="user-table">
+                <thead>
+                    <tr><th>Nom</th><th>Email</th><th>Rôle</th><th>Actions</th></tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+        <section id="gie" class="dashboard-section">
+            <h2><i class="fas fa-database"></i> Base de données G.I.E.</h2>
+            
+            <!-- Compteur et statistiques -->
+            <div class="gie-stats">
+                <div id="gie-counter" class="gie-counter">Chargement...</div>
+            </div>
+
+            <!-- Actions et outils -->
+            <div class="gie-actions">
+                <button id="add-gie-btn" class="gie-action-btn">
+                    <i class="fas fa-plus"></i> Ajouter un G.I.E.
+                </button>
+                <button id="gie-sync-btn" onclick="syncWithMainDatabase()" class="gie-action-btn" style="background:#27ae60;">
+                    <i class="fas fa-sync"></i> Synchroniser
+                </button>
+                
+                <button onclick="resetFilters()" class="gie-action-btn" style="background:#f39c12;">
+                    <i class="fas fa-filter"></i> Réinitialiser filtres
+                </button>
+                <button id="export-gie-btn" class="gie-action-btn">
+                    <i class="fas fa-download"></i> Exporter JSON
+                </button>
+                <button id="export-pdf-btn" class="gie-action-btn" style="background:#e74c3c;">
+                    <i class="fas fa-file-pdf"></i> Exporter PDF
+                </button>
+                <button id="print-all-btn" class="gie-action-btn" style="background:#27ae60;">
+                    <i class="fas fa-print"></i> Imprimer Tout
+                </button>
+                <button onclick="debugGieDatabase()" class="gie-action-btn" style="background:#6c757d;">
+                    <i class="fas fa-bug"></i> Debug
+                </button>
+            </div>
+            
+            <textarea id="gie-export" style="width:100%;height:100px;display:none;margin-top:10px; font-family: monospace; padding: 10px;"></textarea>
+
+            <!-- Formulaire d'ajout/modification -->
+            <form id="gie-form" class="gie-form" style="display:none; margin:20px 0; padding:20px; background:#f8f9fa; border-radius:8px;">
+                <h3><i class="fas fa-edit"></i> Formulaire G.I.E.</h3>
+                <div class="form-grid">
+                    <input type="hidden" id="gie-id">
+                    <input type="text" id="gie-nom" placeholder="Nom du G.I.E." required>
+                    <input type="text" id="gie-commune" placeholder="Commune" required>
+                    <input type="text" id="gie-adresse" placeholder="Adresse" required>
+                    <input type="text" id="gie-telephone" placeholder="Téléphone" required>
+                    <input type="text" id="gie-president" placeholder="Président(e)" required>
+                    <input type="number" id="gie-nombre" placeholder="Nombre de membres" required>
+                    <input type="text" id="gie-type" placeholder="Type (Formelle/Informelle)" required>
+                    <input type="text" id="gie-secteur" placeholder="Secteur d'activité" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="gie-action-btn">
+                        <i class="fas fa-save"></i> Enregistrer
+                    </button>
+                    <button type="button" id="gie-cancel-btn" class="gie-action-btn" style="background:#95a5a6;">
+                        <i class="fas fa-times"></i> Annuler
+                    </button>
+                </div>
+            </form>
+
+            <!-- Filtres de recherche -->
+            <div class="gie-filters">
+                <div class="filter-group">
+                    <input type="text" id="gie-search" placeholder="Rechercher par nom, président ou adresse..." class="search-input">
+                </div>
+                <div class="filter-group">
+                    <select id="gie-commune-filter" class="filter-select" title="Filtrer par commune">
+                        <option value="">Toutes les communes</option>
+                    </select>
+                    <select id="gie-type-filter" class="filter-select" title="Filtrer par type">
+                        <option value="">Tous les types</option>
+                    </select>
+                    <select id="gie-secteur-filter" class="filter-select" title="Filtrer par secteur">
+                        <option value="">Tous les secteurs</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Tableau des G.I.E. -->
+            <div class="table-container">
+                <table class="admin-table" id="gie-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nom</th>
+                            <th>Commune</th>
+                            <th>Adresse</th>
+                            <th>Téléphone</th>
+                            <th>Président(e)</th>
+                            <th>Membres</th>
+                            <th>Type</th>
+                            <th>Secteur</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Les lignes seront générées dynamiquement par JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Nouvelle section pour les Associations - Utilise les mêmes classes CSS que GIE -->
+        <section id="associations" class="dashboard-section">
+            <h2><i class="fas fa-database"></i> Base de données Associations</h2>
+            
+            <!-- Compteur et statistiques - Utilise les mêmes classes que GIE -->
+            <div class="gie-stats">
+                <div id="association-counter" class="gie-counter">Chargement...</div>
+            </div>
+
+            <!-- Actions et outils - Utilise les mêmes classes que GIE -->
+            <div class="gie-actions">
+                <button id="add-association-btn" class="gie-action-btn">
+                    <i class="fas fa-plus"></i> Ajouter une Association
+                </button>
+                <button id="association-sync-btn" onclick="syncAssociationDatabase()" class="gie-action-btn" style="background:#27ae60;">
+                    <i class="fas fa-sync"></i> Synchroniser
+                </button>
+                
+                <button onclick="resetAssociationFilters()" class="gie-action-btn" style="background:#f39c12;">
+                    <i class="fas fa-filter"></i> Réinitialiser filtres
+                </button>
+                <button id="export-association-btn" class="gie-action-btn">
+                    <i class="fas fa-download"></i> Exporter JSON
+                </button>
+                <button id="export-association-pdf-btn" class="gie-action-btn" style="background:#e74c3c;">
+                    <i class="fas fa-file-pdf"></i> Exporter PDF
+                </button>
+                <button id="print-all-associations-btn" class="gie-action-btn" style="background:#27ae60;">
+                    <i class="fas fa-print"></i> Imprimer Tout
+                </button>
+                <button onclick="debugAssociationDatabase()" class="gie-action-btn" style="background:#6c757d;">
+                    <i class="fas fa-bug"></i> Debug
+                </button>
+            </div>
+            
+            <textarea id="association-export" style="width:100%;height:100px;display:none;margin-top:10px; font-family: monospace; padding: 10px;"></textarea>
+
+            <!-- Formulaire d'ajout/modification - Utilise les mêmes classes que GIE -->
+            <form id="association-form" class="gie-form" style="display:none; margin:20px 0; padding:20px; background:#f8f9fa; border-radius:8px;">
+                <h3><i class="fas fa-edit"></i> Formulaire Association</h3>
+                <div class="form-grid">
+                    <input type="hidden" id="association-id">
+                    <input type="text" id="association-nom" placeholder="Nom de l'Association" required>
+                    <input type="text" id="association-commune" placeholder="Commune" required>
+                    <input type="text" id="association-adresse" placeholder="Adresse" required>
+                    <input type="text" id="association-telephone" placeholder="Téléphone" required>
+                    <input type="text" id="association-president" placeholder="Président(e)" required>
+                    <input type="number" id="association-nombre" placeholder="Nombre de membres" required>
+                    <input type="text" id="association-type" placeholder="Type d'association" required>
+                    <input type="text" id="association-secteur" placeholder="Secteur d'activité" required>
+                    <input type="email" id="association-email" placeholder="Email" required>
+                    <input type="text" id="association-dateCreation" placeholder="Date de création" required>
+                    <input type="text" id="association-statut" placeholder="Statut" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="gie-action-btn">
+                        <i class="fas fa-save"></i> Enregistrer
+                    </button>
+                    <button type="button" id="association-cancel-btn" class="gie-action-btn" style="background:#95a5a6;">
+                        <i class="fas fa-times"></i> Annuler
+                    </button>
+                </div>
+            </form>
+
+            <!-- Filtres de recherche - Utilise les mêmes classes que GIE -->
+            <div class="gie-filters">
+                <div class="filter-group">
+                    <input type="text" id="association-search" placeholder="Rechercher par nom, président ou adresse..." class="search-input">
+                </div>
+                <div class="filter-group">
+                    <select id="association-commune-filter" class="filter-select" title="Filtrer par commune">
+                        <option value="">Toutes les communes</option>
+                    </select>
+                    <select id="association-type-filter" class="filter-select" title="Filtrer par type">
+                        <option value="">Tous les types</option>
+                    </select>
+                    <select id="association-secteur-filter" class="filter-select" title="Filtrer par secteur">
+                        <option value="">Tous les secteurs</option>
+                    </select>
+                    <select id="association-statut-filter" class="filter-select" title="Filtrer par statut">
+                        <option value="">Tous les statuts</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Tableau des Associations -->
+            <div class="table-container">
+                <table class="admin-table" id="association-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nom</th>
+                            <th>Commune</th>
+                            <th>Adresse</th>
+                            <th>Téléphone</th>
+                            <th>Président(e)</th>
+                            <th>Membres</th>
+                            <th>Type</th>
+                            <th>Secteur</th>
+                            <th>Email</th>
+                            <th>Date Création</th>
+                            <th>Statut</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Les lignes seront générées dynamiquement par JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="settings" class="dashboard-section">
+            <h2>Paramètres</h2>
+            <p>Section de paramètres à personnaliser selon tes besoins.</p>
+        </section>
+
+        <section id="members" class="dashboard-section" style="display:none;">
+            <h2><i class="fas fa-id-badge"></i> Gestion des Membres</h2>
+            <div class="gie-actions" style="margin-bottom:12px;">
+                <button class="gie-action-btn" id="members-tab-pending"><i class="fas fa-hourglass-half"></i> En attente</button>
+                <button class="gie-action-btn" id="members-tab-approved" style="background:#1e8e4c;"><i class="fas fa-check"></i> Approuvés</button>
+                <button class="gie-action-btn" id="members-refresh"><i class="fas fa-rotate"></i> Rafraîchir</button>
+            </div>
+            <div class="table-container">
+                <table class="admin-table" id="members-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nom</th>
+                            <th>Email</th>
+                            <th>Type</th>
+                            <th>Entité</th>
+                            <th>Statut</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+        <div class="toast-container" id="toast-container"></div>
+    </main>
+
+    <!-- Modal Profil Utilisateur -->
+    <div class="profile-modal" id="profile-modal" style="display:none;">
+        <div class="profile-backdrop" id="profile-backdrop"></div>
+        <div class="profile-dialog" role="dialog" aria-labelledby="profile-title" aria-modal="true">
+            <div class="profile-header">
+                <h3 id="profile-title"><i class="fas fa-user"></i> Mon profil</h3>
+                <button type="button" class="gie-action-btn" id="profile-close-btn" aria-label="Fermer"><i class="fas fa-times"></i></button>
+            </div>
+            <form id="profile-form" class="gie-form">
+                <div class="form-grid">
+                    <input type="hidden" id="profile-id">
+                    <div>
+                        <label for="profile-name">Nom</label>
+                        <input type="text" id="profile-name" required>
+                    </div>
+                    <div>
+                        <label for="profile-email">Email</label>
+                        <input type="email" id="profile-email" readonly>
+                    </div>
+                    <div>
+                        <label for="profile-role">Rôle</label>
+                        <input type="text" id="profile-role" readonly>
+                    </div>
+                    <div class="profile-avatar-upload">
+                        <label for="profile-avatar">Avatar</label>
+                        <input type="file" id="profile-avatar" accept="image/*">
+                        <div class="avatar-preview" id="profile-avatar-preview"><span>Aperçu</span></div>
+                        <small>Formats image, taille conseillée ≤ 512x512</small>
+                    </div>
+                    <div>
+                        <label for="profile-current">Mot de passe actuel</label>
+                        <input type="password" id="profile-current" placeholder="Requis pour changer le mot de passe">
+                    </div>
+                    <div>
+                        <label for="profile-new">Nouveau mot de passe</label>
+                        <input type="password" id="profile-new" placeholder="Laisser vide pour ne pas changer">
+                    </div>
+                    <div>
+                        <label for="profile-confirm">Confirmer le mot de passe</label>
+                        <input type="password" id="profile-confirm" placeholder="Confirmer le nouveau mot de passe">
+                    </div>
+                </div>
+                <div class="form-actions" style="margin-top:12px;">
+                    <button type="submit" id="profile-save-btn" class="gie-action-btn"><i class="fas fa-save"></i> Enregistrer</button>
+                    <button type="button" id="profile-cancel-btn" class="gie-action-btn" style="background:#95a5a6;"><i class="fas fa-times"></i> Annuler</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/gieStorage.js"></script>
+    <script src="js/associationDatabase.js"></script>
+    <script src="js/associationStorage.js"></script>
+    <script src="js/userStorage.js"></script>
+    <script src="js/siteUserStorage.js"></script>
+    <script src="js/gieDatabase.js"></script>
+    <script src="js/admin.js"></script>
+    <script>
+        // S'assurer que le userStorage par défaut a bien un Super Admin
+        if (typeof userStorage !== 'undefined') {
+            const users = userStorage.getAllUsers();
+            const admin = users.find(u => u.email === 'Mamadou@negus-agency.com');
+            if (!admin) {
+                userStorage.addUser({ nom: 'Admin Principal', email: 'Mamadou@negus-agency.com', role: 'Super Admin', password: 'Technox1408!' });
+            }
+        }
+    </script>
+    <script>
+        // Exemple de graphique avec Chart.js
+        const ctx = document.getElementById('adminChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Femmes', 'Jeunes', 'Autres'],
+                datasets: [{
+                    data: [65, 45, 40],
+                    backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc']
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {legend: {position: 'bottom'}}
+            }
+        });
+        
+        // Test de la base de données après chargement
+        window.addEventListener('load', function() {
+            console.log('=== TEST FINAL ===');
+            console.log('gieDatabase disponible:', typeof gieDatabase !== 'undefined');
+            if (typeof gieDatabase !== 'undefined') {
+                console.log('Nombre de G.I.E.:', gieDatabase.length);
+                console.log('Premier G.I.E.:', gieDatabase[0]);
+            }
+            console.log('associationDatabase disponible:', typeof associationDatabase !== 'undefined');
+            if (typeof associationDatabase !== 'undefined') {
+                console.log('Nombre d\'Associations:', associationDatabase.length);
+                console.log('Première Association:', associationDatabase[0]);
+            }
+        });
+    </script>
+</body>
+</html> 

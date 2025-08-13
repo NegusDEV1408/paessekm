@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Espace membre - Connexion</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/admin.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    .auth-wrapper { display:flex;align-items:center;justify-content:center;min-height:100vh;background:linear-gradient(180deg,#f5f7fb,#eef2f7); padding:16px; }
+    .auth-card { background:#fff;border-radius:14px;box-shadow:0 14px 40px rgba(0,0,0,.08);padding:20px;max-width:560px;width:100%; border:1px solid #edf2f7; position:relative; }
+    .auth-card::before{ content:""; position:absolute; inset:0; pointer-events:none; background: radial-gradient(800px 200px at 90% -30%, rgba(39,174,96,0.08), rgba(255,255,255,0) 60%); border-radius:inherit; }
+    .auth-header { display:flex;align-items:center;justify-content:space-between;margin-bottom:10px; }
+    .auth-actions { display:flex;gap:10px; }
+    .auth-tabs { display:flex;gap:10px;margin-bottom:14px; }
+    .auth-tabs .tab { background:#95a5a6;color:#fff;border:none;border-radius:8px;padding:8px 12px;cursor:pointer;transition:.2s; }
+    .auth-tabs .tab:hover { filter: brightness(1.05); transform: translateY(-1px); box-shadow: 0 6px 16px rgba(0,0,0,.06); }
+    .auth-tabs .tab.active { background:#27ae60; box-shadow: 0 6px 18px rgba(39,174,96,.25); }
+    .auth-title { margin:0;display:flex;align-items:center;gap:8px; }
+    .gie-form .form-grid { gap: 10px 12px; }
+    .input-group { position:relative; }
+    .input-group input, .input-group select, #site-user-type, #site-entity-select, #site-user-name, #site-user-email { width:100%; border:1px solid #e5e7eb; border-radius:8px; padding:10px 12px; background:#fbfbfd; transition: .2s; }
+    .input-group input:hover, .input-group select:hover, #site-user-type:hover, #site-entity-select:hover, #site-user-name:hover, #site-user-email:hover { border-color:#cbd5e1; }
+    .input-group input:focus, .input-group select:focus, #site-user-type:focus, #site-entity-select:focus, #site-user-name:focus, #site-user-email:focus { outline:none; border-color:#27ae60; box-shadow: 0 0 0 3px rgba(39,174,96,.15); background:#fff; }
+    .toggle-pass { position:absolute; right:8px; top:50%; transform:translateY(-50%); background:transparent;border:none;cursor:pointer;color:#888; }
+    .form-error { color:#e74c3c; margin-top:8px; font-size:.9rem; background:#fdecea; border:1px solid #f5c6cb; padding:8px 10px; border-radius:8px; }
+    .form-success { color:#1e8e4c; margin-top:8px; font-size:.9rem; background:#e8f5e9; border:1px solid #b7dfbf; padding:8px 10px; border-radius:8px; }
+    .strength { height:6px; background:#eee; border-radius:999px; overflow:hidden; }
+    .strength > span { display:block; height:100%; width:0; transition:width .25s ease, background .25s ease; }
+    .help-row { display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:10px; font-size:.9rem; }
+    .help-row a { text-decoration:none; color:#27ae60; }
+    .help-row a:hover { text-decoration:underline; }
+    .terms { font-size:.85rem; color:#666; }
+    .home-btn { transition: .2s; }
+    .home-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(39,174,96,.25); }
+    /* Buttons in this card */
+    .auth-card .gie-action-btn { background:#27ae60; color:#fff; border:none; }
+    .auth-card .gie-action-btn:hover { background:#1e8e4c; }
+    .auth-divider { height:1px; background:#edf2f7; margin:12px 0; }
+    /* Bold texts within the auth card */
+    .auth-card h1, .auth-card h2, .auth-card h3,
+    .auth-card p, .auth-card label, .auth-card small,
+    .auth-card a, .auth-card button, .auth-card span { font-weight: 600; }
+    @media (max-width: 520px){ .auth-card{ padding:16px; } }
+  </style>
+</head>
+<body>
+  <main class="auth-wrapper">
+    <div class="auth-card">
+      <div class="auth-header">
+        <h2 class="auth-title"><i class="fas fa-user"></i> Espace membre</h2>
+        <div class="auth-actions">
+          <a href="index.html" class="home-btn" style="padding:8px 10px;border-radius:8px;background:#27ae60;color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:8px;"><i class="fas fa-home"></i> <span>Accueil</span></a>
+        </div>
+      </div>
+
+      <div class="auth-tabs">
+        <button id="tab-login" class="tab active"><i class="fas fa-right-to-bracket"></i> Connexion</button>
+        <button id="tab-register" class="tab"><i class="fas fa-user-plus"></i> Créer un compte</button>
+      </div>
+
+      <div id="login-pane">
+        <form id="site-login-form" class="gie-form">
+          <div class="form-grid">
+            <div class="input-group">
+              <input type="email" id="site-login-email" placeholder="Email" required />
+            </div>
+            <div class="input-group">
+              <input type="password" id="site-login-password" placeholder="Mot de passe" required />
+              <button type="button" class="toggle-pass" data-target="site-login-password" title="Afficher/Masquer"><i class="fas fa-eye"></i></button>
+            </div>
+          </div>
+          <div class="help-row">
+            <label><input type="checkbox" id="remember-email" /> Se souvenir de mon email</label>
+            <a href="#" id="forgot-link" title="Contactez l'administration pour réinitialiser">Mot de passe oublié ?</a>
+          </div>
+          <div class="form-actions" style="margin-top:8px;">
+            <button type="submit" class="gie-action-btn" id="login-submit"><i class="fas fa-right-to-bracket"></i> Se connecter</button>
+          </div>
+          <div id="login-message" class="form-error" style="display:none;"></div>
+        </form>
+      </div>
+
+      <div id="register-pane" style="display:none;">
+        <form id="site-register-form" class="gie-form">
+          <div class="form-grid">
+            <select id="site-user-type" required>
+              <option value="">Type de compte</option>
+              <option value="GIE">G.I.E</option>
+              <option value="ASSO">Association</option>
+            </select>
+            <select id="site-entity-select" required>
+              <option value="">Sélectionner votre entité</option>
+            </select>
+            <small id="entity-hint" class="terms">Sélectionnez un type pour charger les entités.</small>
+            <input type="text" id="site-user-name" placeholder="Nom du GIE/Association" required />
+            <input type="email" id="site-user-email" placeholder="Email" required />
+            <div class="input-group">
+              <input type="password" id="site-user-password" placeholder="Mot de passe (min. 4)" required />
+              <button type="button" class="toggle-pass" data-target="site-user-password" title="Afficher/Masquer"><i class="fas fa-eye"></i></button>
+            </div>
+            <div class="strength" aria-hidden="true"><span id="pwd-strength-bar"></span></div>
+          </div>
+          <small class="terms">En créant un compte, vous acceptez nos conditions d'utilisation.</small>
+          <div class="form-actions" style="margin-top:8px;">
+            <button type="submit" class="gie-action-btn" id="register-submit"><i class="fas fa-user-plus"></i> Créer le compte</button>
+          </div>
+          <div id="register-message" class="form-error" style="display:none;"></div>
+          <div id="register-success" class="form-success" style="display:none;"></div>
+        </form>
+      </div>
+
+      <div id="site-user-message" style="margin-top:12px;color:#444;"></div>
+    </div>
+  </main>
+  <script src="js/siteUserStorage.js"></script>
+  <script src="js/siteAuthUI.js"></script>
+  <script src="js/gieDatabase.js"></script>
+  <script src="js/associationDatabase.js"></script>
+  <script>
+    const tabLogin = document.getElementById('tab-login');
+    const tabRegister = document.getElementById('tab-register');
+    const loginPane = document.getElementById('login-pane');
+    const registerPane = document.getElementById('register-pane');
+    const msg = document.getElementById('site-user-message');
+    const loginMsg = document.getElementById('login-message');
+    const regMsg = document.getElementById('register-message');
+    const regOk = document.getElementById('register-success');
+
+    function setActiveTab(tab){
+      if (tab === 'login') { loginPane.style.display='block'; registerPane.style.display='none'; tabLogin.classList.add('active'); tabRegister.classList.remove('active'); }
+      else { loginPane.style.display='none'; registerPane.style.display='block'; tabLogin.classList.remove('active'); tabRegister.classList.add('active');
+        // Auto-select default type to reveal entities if none chosen
+        const tSel = document.getElementById('site-user-type');
+        if (tSel && !tSel.value) { tSel.value = 'GIE'; }
+        // Populate now
+        if (typeof populateEntitySelectIfReady === 'function') populateEntitySelectIfReady();
+      }
+      try { localStorage.setItem('authTab', tab); } catch {}
+    }
+    tabLogin.addEventListener('click', ()=>{ setActiveTab('login'); msg.textContent=''; loginMsg.style.display='none'; regMsg.style.display='none'; regOk.style.display='none'; });
+    tabRegister.addEventListener('click', ()=>{ setActiveTab('register'); msg.textContent=''; loginMsg.style.display='none'; regMsg.style.display='none'; regOk.style.display='none'; });
+
+    // Restore last tab and remembered email
+    (function(){
+      try { const t=localStorage.getItem('authTab'); if (t) setActiveTab(t); } catch {}
+      try { const savedEmail=localStorage.getItem('authEmail'); if (savedEmail) document.getElementById('site-login-email').value=savedEmail; } catch {}
+    })();
+
+    // Toggle password visibility
+    document.querySelectorAll('.toggle-pass').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const id = btn.getAttribute('data-target');
+        const input = document.getElementById(id);
+        if (!input) return;
+        if (input.type === 'password') { input.type = 'text'; btn.innerHTML='<i class="fas fa-eye-slash"></i>'; }
+        else { input.type = 'password'; btn.innerHTML='<i class="fas fa-eye"></i>'; }
+        input.focus();
+      });
+    });
+
+    // Populate entity select based on type
+    const typeSelect = document.getElementById('site-user-type');
+    const entitySelect = document.getElementById('site-entity-select');
+    const entityHint = document.getElementById('entity-hint');
+    function populateEntitySelectIfReady(){
+      if (!entitySelect || !typeSelect) return;
+      entitySelect.innerHTML = '<option value="">Sélectionner votre entité</option>';
+      const t = typeSelect.value;
+      if (t === 'GIE') {
+        if (typeof gieDatabase === 'undefined') { if (entityHint) entityHint.textContent='Chargement des G.I.E...'; setTimeout(populateEntitySelectIfReady, 150); return; }
+        gieDatabase.slice(0, 500).forEach(g => { const opt = document.createElement('option'); opt.value = g.id; opt.textContent = `${g.id} - ${g.nom}`; entitySelect.appendChild(opt); });
+        if (entityHint) entityHint.textContent = `Chargé: ${Math.min(500, gieDatabase.length)} G.I.E`;
+      } else if (t === 'ASSO') {
+        if (typeof associationDatabase === 'undefined') { if (entityHint) entityHint.textContent='Chargement des Associations...'; setTimeout(populateEntitySelectIfReady, 150); return; }
+        associationDatabase.forEach(a => { const opt = document.createElement('option'); opt.value = a.id; opt.textContent = `${a.id} - ${a.nom}`; entitySelect.appendChild(opt); });
+        if (entityHint) entityHint.textContent = `Chargé: ${associationDatabase.length} Associations`;
+      } else {
+        if (entityHint) entityHint.textContent = 'Sélectionnez un type pour charger les entités.';
+      }
+    }
+    typeSelect.addEventListener('change', ()=>{
+      populateEntitySelectIfReady();
+    });
+    // If returning to register tab, ensure entities are loaded
+    if (registerPane.style.display !== 'none') { populateEntitySelectIfReady(); }
+
+    // Password strength meter
+    const pwd = document.getElementById('site-user-password');
+    const bar = document.getElementById('pwd-strength-bar');
+    function strengthScore(v){ let s=0; if (v.length>=6) s++; if (/[A-Z]/.test(v)) s++; if (/[0-9]/.test(v)) s++; if (/[^A-Za-z0-9]/.test(v)) s++; return s; }
+    pwd.addEventListener('input', ()=>{ const v=pwd.value; const s=strengthScore(v); const pct=[0,25,50,75,100][s]; bar.style.width=pct+'%'; bar.style.background = s<2?'#e74c3c': s<3?'#e67e22': s<4?'#f1c40f':'#27ae60'; });
+
+    // Connexion
+    document.getElementById('site-login-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      loginMsg.style.display='none'; regMsg.style.display='none'; regOk.style.display='none';
+      const email = document.getElementById('site-login-email').value.trim();
+      const password = document.getElementById('site-login-password').value;
+      const btn = document.getElementById('login-submit'); btn.disabled=true; btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Connexion...';
+      setTimeout(()=>{
+        const user = siteUserStorage.validateLogin(email, password);
+        if (user) {
+          try { 
+            // Utiliser localStorage pour la persistance
+            const userData = { id:user.id, email:user.email, type:user.type, name:user.name };
+            localStorage.setItem('currentSiteUser', JSON.stringify(userData));
+            localStorage.setItem('authEmail', email); 
+          } catch {}
+          msg.style.color = '#27ae60'; msg.textContent = 'Connexion réussie.';
+          const target = (localStorage.getItem('postLoginRedirect') || 'index.html');
+          try { localStorage.removeItem('postLoginRedirect'); } catch {}
+          setTimeout(()=>{ window.location.href = target; }, 600);
+        } else {
+          loginMsg.textContent = "Identifiants invalides ou compte non approuvé."; loginMsg.style.display='block';
+        }
+        btn.disabled=false; btn.innerHTML='<i class="fas fa-right-to-bracket"></i> Se connecter';
+      }, 300);
+    });
+
+    // Inscription
+    document.getElementById('site-register-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      loginMsg.style.display='none'; regMsg.style.display='none'; regOk.style.display='none';
+      const type = document.getElementById('site-user-type').value;
+      const entityId = document.getElementById('site-entity-select').value;
+      const name = document.getElementById('site-user-name').value.trim();
+      const email = document.getElementById('site-user-email').value.trim();
+      const password = document.getElementById('site-user-password').value;
+      if (!type) { regMsg.textContent='Choisissez un type de compte.'; regMsg.style.display='block'; return; }
+      if (!entityId) { regMsg.textContent='Sélectionnez votre entité.'; regMsg.style.display='block'; return; }
+      if (password.length < 4) { regMsg.textContent='Mot de passe trop court.'; regMsg.style.display='block'; return; }
+      const btn = document.getElementById('register-submit'); btn.disabled=true; btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Création...';
+      setTimeout(()=>{
+        try {
+          siteUserStorage.addUser({ type, entityId: parseInt(entityId), email, password, name });
+          regOk.textContent = 'Compte créé et en attente de validation par l\'administration.'; regOk.style.display='block';
+          // Pré-remplir login et switch tab
+          document.getElementById('site-login-email').value = email;
+          setActiveTab('login');
+        } catch(err) {
+          regMsg.textContent = err.message || 'Erreur lors de la création du compte.'; regMsg.style.display='block';
+        }
+        btn.disabled=false; btn.innerHTML='<i class="fas fa-user-plus"></i> Créer le compte';
+      }, 400);
+    });
+  </script>
+</body>
+</html> 

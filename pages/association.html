@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Associations - Keur Massar Social</title>
+    <link rel="stylesheet" href="../css/unified-colors.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/pages-common.css">
+    <link rel="stylesheet" href="../css/association.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Menu principal -->
+    <header class="header-transparent">
+        <nav class="main-nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="../images/logo.png" alt="Logo Keur Massar Social">
+                    </a>
+                </div>
+
+                <div class="nav-elements">
+                    <ul class="nav-links">
+                        <li class="nav-item">
+                            <a href="../index.html">
+                                <i class="fas fa-home"></i>
+                                <span>Accueil</span>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="annuaire.html">
+                                <i class="fas fa-book"></i>
+                                <span>Annuaire</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="entreprises.html">Entreprises</a></li>
+                                <li><a href="G.I.E.html">G.I.E</a></li>
+                                <li><a href="association.html" class="active">Associations</a></li>
+                                <li><a href="fondation.html">Fondation</a></li>
+                                <li><a href="cooperatives.html">Cooperatives</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="carte.html">
+                                <i class="fas fa-map-marked-alt"></i>
+                                <span>Carte</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="actualites.html">
+                                <i class="fas fa-newspaper"></i>
+                                <span>Actualités</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact.html">
+                                <i class="fas fa-envelope"></i>
+                                <span>Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="nav-buttons">
+                        <a href="../user-login.html" class="member-btn" title="Espace membre">
+                            <i class="fas fa-user"></i>
+                            <span>Espace membre</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="association-main">
+        <!-- Section Hero -->
+        <section class="association-hero">
+            <div class="hero-content">
+                <h1>Associations de Keur Massar</h1>
+                <p>Découvrez les associations actives qui contribuent au développement de notre communauté</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-users"></i>
+                        <div class="stat-info">
+                            <span class="stat-number" id="total-associations">0</span>
+                            <span class="stat-label">Associations</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="stat-info">
+                            <span class="stat-number" id="total-communes">6</span>
+                            <span class="stat-label">Communes</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-handshake"></i>
+                        <div class="stat-info">
+                            <span class="stat-number" id="total-members">0</span>
+                            <span class="stat-label">Membres</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-chart-line"></i>
+                        <div class="stat-info">
+                            <span class="stat-number" id="total-sectors">0</span>
+                            <span class="stat-label">Secteurs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section de recherche et filtres -->
+        <section class="search-section">
+            <div class="search-filters">
+                <div class="filter-group">
+                    <select id="communeFilter" title="Filtrer par commune">
+                        <option value="">Toutes les communes</option>
+                    </select>
+                    
+                    <select id="sectorFilter" title="Filtrer par secteur">
+                        <option value="">Tous les secteurs</option>
+                    </select>
+                    
+                    <select id="sortFilter" title="Trier les résultats">
+                        <option value="nom">Trier par nom</option>
+                        <option value="commune">Trier par commune</option>
+                        <option value="nombre">Trier par nombre de membres</option>
+                        <option value="dateCreation">Trier par date de création</option>
+                    </select>
+                    
+                    <select id="typeFilter" title="Filtrer par type">
+                        <option value="">Tous les types</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section des résultats -->
+        <section class="results-section">
+            <div class="results-header">
+                <div class="results-count">
+                    <span id="resultCount">0</span> association(s) trouvée(s)
+                </div>
+                
+                <div class="results-actions">
+                    <div class="view-options">
+                        <button class="view-btn active" data-view="grid" title="Vue grille">
+                            <i class="fas fa-th"></i>
+                            Grille
+                        </button>
+                        <button class="view-btn" data-view="list" title="Vue liste">
+                            <i class="fas fa-list"></i>
+                            Liste
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grille des associations -->
+            <div class="association-grid" id="associationGrid">
+                <!-- Les cartes d'associations seront générées dynamiquement -->
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination" id="pagination">
+                <!-- La pagination sera générée dynamiquement -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <img src="../images/logo.png" alt="Logo PAESSE" class="footer-logo">
+                <h4>À propos</h4>
+                <p>Plateforme des Acteurs de l'Economie Sociale, Solidaire et Environnementale de Keur Massar (PAESSE) dédiée à l'économie sociale de Keur Massar</p>
+            </div>
+            
+            <div class="footer-section links">
+                <h4>Liens Rapides</h4>
+                <ul>
+                    <li><a href="annuaire.html">Annuaire</a></li>
+                    <li><a href="actualites.html">Actualités</a></li>
+                    <li><a href="carte.html">Carte</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section contact">
+                <h4>Contact</h4>
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> Keur Massar, Dakar, Sénégal</p>
+                    <p><i class="fas fa-phone"></i> +221 33 878 29 60 </p>
+                    <p><i class="fas fa-envelope"></i> contact@paessekm.com</p>
+                </div>
+            </div>
+
+            <div class="footer-section social">
+                <h4>Suivez-nous</h4>
+                <div class="social-links">
+                    <a href="#" class="social-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-btn linkedin"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-btn instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="newsletter">
+                    <h5>Newsletter</h5>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Votre email">
+                        <button type="submit" title="S'inscrire à la newsletter"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; 2024 PAESSKM. Tous droits réservés</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Mentions légales</a> |
+                    <a href="#">Politique de confidentialité</a> |
+                    <a href="https://negus-agency.com/">Conçu par Negus Agency</a> |
+                    <a href="../admin-login.html" class="admin-login-btn">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Admin</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/associationDatabase.js"></script>
+    <script src="../js/associationStorage.js"></script>
+    <script src="../js/association.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/siteAuthUI.js"></script>
+</body>
+</html> 

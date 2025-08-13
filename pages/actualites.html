@@ -5,96 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actualités - Keur Massar Social</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/pages-common.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/actualites.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <!-- Menu principal -->
     <header class="header-transparent">
         <nav class="main-nav">
             <div class="nav-container">
                 <div class="logo">
-                    <img src="../images/logo.png" alt="Logo Keur Massar Social">
+                    <a href="../index.html">
+                        <img src="../images/logo.png" alt="Logo Keur Massar Social">
+                    </a>
                 </div>
-    
+
                 <div class="nav-elements">
                     <ul class="nav-links">
                         <li class="nav-item">
-                            <a href="../index.html" class="active">
+                            <a href="../index.html">
                                 <i class="fas fa-home"></i>
                                 <span>Accueil</span>
                             </a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a href="../pages/annuaire.html">
+                            <a href="annuaire.html">
                                 <i class="fas fa-book"></i>
                                 <span>Annuaire</span>
                                 <i class="fas fa-chevron-down"></i>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="../pages/annuaire.html#entreprises">Entreprises</a></li>
-                                <li><a href="../pages/annuaire.html#associations">Associations</a></li>
-                                <li><a href="../pages/annuaire.html#artisans">Artisans</a></li>
+                                <li><a href="entreprises.html">Entreprises</a></li>
+                                <li><a href="G.I.E.html">G.I.E</a></li>
+                                <li><a href="association.html">Associations</a></li>
+                                <li><a href="fondation.html">Fondation</a></li>
+                                <li><a href="cooperatives.html">Cooperatives</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="../pages/carte.html">
+                            <a href="carte.html">
                                 <i class="fas fa-map-marked-alt"></i>
                                 <span>Carte</span>
                             </a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a href="../pages/actualites.html">
+                        <li class="nav-item">
+                            <a href="actualites.html" class="active">
                                 <i class="fas fa-newspaper"></i>
                                 <span>Actualités</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="../pages/actualites.html#evenements">Événements</a></li>
-                                <li><a href="../pages/actualites.html#news">Nouvelles</a></li>
-                                <li><a href="../pages/actualites.html#blog">Blog</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="../pages/G.I.E.html">
-                                <i class="fas fa-building"></i>
-                                <span>G.I.E</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../pages/contact.html">
+                            <a href="contact.html">
                                 <i class="fas fa-envelope"></i>
                                 <span>Contact</span>
                             </a>
                         </li>
                     </ul>
-    
+
                     <div class="nav-buttons">
-                        <button class="search-btn">
-                            <i class="fas fa-search"></i>
-                        </button>
-                        <button class="theme-toggle">
-                            <i class="fas fa-moon"></i>
-                        </button>
-                        <button class="menu-toggle">
-                            <i class="fas fa-bars"></i>
-                        </button>
+                        <a href="../user-login.html" class="member-btn" title="Espace membre">
+                            <i class="fas fa-user"></i>
+                            <span>Espace membre</span>
+                        </a>
                     </div>
                 </div>
             </div>
         </nav>
-    
-        <!-- Barre de recherche -->
-        <div class="search-overlay">
-            <div class="search-container">
-                <input type="text" placeholder="Rechercher...">
-                <button class="close-search">
-                <i class="fas fa-times"></i>
-                </button>
-            </div>
-        </div>
     </header>
-    <!-- Header identique -->
 
     <main class="actualites-main">
         <section class="actualites-hero">
@@ -186,8 +164,68 @@
         </section>
     </main>
 
-    <!-- Footer identique -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <img src="../images/logo.png" alt="Logo PAESSE" class="footer-logo">
+                <h4>À propos</h4>
+                <p>Plateforme des Acteurs de l'Economie Sociale, Solidaire et Environnementale de Keur Massar (PAESSE) dédiée à l'économie sociale de Keur Massar</p>
+            </div>
+            
+            <div class="footer-section links">
+                <h4>Liens Rapides</h4>
+                <ul>
+                    <li><a href="annuaire.html">Annuaire</a></li>
+                    <li><a href="actualites.html">Actualités</a></li>
+                    <li><a href="carte.html">Carte</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
 
+            <div class="footer-section contact">
+                <h4>Contact</h4>
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> Keur Massar, Dakar, Sénégal</p>
+                    <p><i class="fas fa-phone"></i> +221 33 878 29 60</p>
+                    <p><i class="fas fa-envelope"></i> contact@paessekm.com</p>
+                </div>
+            </div>
+
+            <div class="footer-section social">
+                <h4>Suivez-nous</h4>
+                <div class="social-links">
+                    <a href="#" class="social-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-btn linkedin"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-btn instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="newsletter">
+                    <h5>Newsletter</h5>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Votre email">
+                        <button type="submit" title="S'inscrire à la newsletter"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; 2024 PAESSKM. Tous droits réservés</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Mentions légales</a> |
+                    <a href="#">Politique de confidentialité</a> |
+                    <a href="https://negus-agency.com/">Conçu par Negus Agency</a> |
+                    <a href="../admin-login.html" class="admin-login-btn">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Admin</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/siteAuthUI.js"></script>
     <script src="../js/actualites.js"></script>
 </body>
 </html>

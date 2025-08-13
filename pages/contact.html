@@ -5,220 +5,621 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Keur Massar Social</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/pages-common.css">
     <link rel="stylesheet" href="../css/contact.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Leaflet CSS pour la carte -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
 </head>
 <body>
-    
+    <!-- Menu principal -->
     <header class="header-transparent">
         <nav class="main-nav">
             <div class="nav-container">
                 <div class="logo">
-                    <img src="../images/logo.png" alt="Logo Keur Massar Social">
+                    <a href="../index.html">
+                        <img src="../images/logo.png" alt="Logo Keur Massar Social">
+                    </a>
                 </div>
-    
+
                 <div class="nav-elements">
                     <ul class="nav-links">
                         <li class="nav-item">
-                            <a href="../index.html" class="active">
+                            <a href="../index.html">
                                 <i class="fas fa-home"></i>
                                 <span>Accueil</span>
                             </a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a href="../pages/annuaire.html">
+                            <a href="annuaire.html">
                                 <i class="fas fa-book"></i>
                                 <span>Annuaire</span>
                                 <i class="fas fa-chevron-down"></i>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="../pages/annuaire.html#entreprises">Entreprises</a></li>
-                                <li><a href="../pages/annuaire.html#associations">Associations</a></li>
-                                <li><a href="../pages/annuaire.html#artisans">Artisans</a></li>
+                                <li><a href="entreprises.html">Entreprises</a></li>
+                                <li><a href="G.I.E.html">G.I.E</a></li>
+                                <li><a href="association.html">Associations</a></li>
+                                <li><a href="fondation.html">Fondation</a></li>
+                                <li><a href="cooperatives.html">Cooperatives</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="../pages/carte.html">
+                            <a href="carte.html">
                                 <i class="fas fa-map-marked-alt"></i>
                                 <span>Carte</span>
                             </a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a href="../pages/actualites.html">
+                        <li class="nav-item">
+                            <a href="actualites.html">
                                 <i class="fas fa-newspaper"></i>
                                 <span>Actualités</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="../pages/actualites.html#evenements">Événements</a></li>
-                                <li><a href="../pages/actualites.html#news">Nouvelles</a></li>
-                                <li><a href="../pages/actualites.html#blog">Blog</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="../pages/G.I.E.html">
-                                <i class="fas fa-building"></i>
-                                <span>G.I.E</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../pages/contact.html">
+                            <a href="contact.html" class="active">
                                 <i class="fas fa-envelope"></i>
                                 <span>Contact</span>
                             </a>
                         </li>
                     </ul>
-    
+
                     <div class="nav-buttons">
-                        <button class="search-btn">
-                            <i class="fas fa-search"></i>
-                        </button>
-                        <button class="theme-toggle">
-                            <i class="fas fa-moon"></i>
-                        </button>
-                        <button class="menu-toggle">
-                            <i class="fas fa-bars"></i>
-                        </button>
+                        <a href="../user-login.html" class="member-btn" title="Espace membre">
+                            <i class="fas fa-user"></i>
+                            <span>Espace membre</span>
+                        </a>
                     </div>
                 </div>
             </div>
         </nav>
-    
-        <!-- Barre de recherche -->
-        <div class="search-overlay">
-            <div class="search-container">
-                <input type="text" placeholder="Rechercher...">
-                <button class="close-search">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-        </div>
     </header>
-        <!-- Navigation identique aux autres pages -->
     
-
     <main class="contact-main">
-        <section class="contact-hero">
-            <h1>Contactez-nous</h1>
-            <p>Notre équipe est à votre écoute pour toute question ou suggestion</p>
-            <div class="hero-decoration">
-                <i class="fas fa-envelope-open-text"></i>
+        <!-- Section Hero améliorée -->
+        <section class="contact-hero" data-aos="fade-up">
+            <div class="hero-background">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <h1>Contactez-nous</h1>
+                <p class="hero-subtitle">Nous sommes là pour vous écouter et vous accompagner</p>
+                <p class="hero-description">Que vous ayez une question, une suggestion ou que vous souhaitiez collaborer avec nous, notre équipe est à votre disposition pour vous répondre dans les plus brefs délais.</p>
+                
+                <!-- Statistiques de contact -->
+                <div class="contact-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">24h</span>
+                        <span class="stat-label">Temps de réponse</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Satisfaction client</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Messages traités</span>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <div class="contact-container">
-            <section class="contact-info">
-                <h2>Nos Coordonnées</h2>
+        <!-- Section des coordonnées améliorée -->
+        <section class="contact-info-section" data-aos="fade-up" data-aos-delay="100">
+            <div class="container">
+                <div class="section-header">
+                    <h2><i class="fas fa-address-book"></i> Nos Coordonnées</h2>
+                    <p>Plusieurs façons de nous contacter selon vos besoins</p>
+                </div>
+                
                 <div class="info-cards-grid">
-                    <div class="info-card">
-                        <div class="icon-wrapper">
-                            <i class="fas fa-map-marker-alt"></i>
+                    <div class="info-card" data-aos="fade-up" data-aos-delay="150">
+                        <div class="card-header">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h3>Notre Adresse</h3>
                         </div>
-                        <h3>Notre Adresse</h3>
-                        <p>Bureau principal</p>
-                        <p>Keur Massar, Dakar, Sénégal</p>
-                        <a href="#map" class="info-link">Voir sur la carte <i class="fas fa-arrow-right"></i></a>
+                        <div class="card-content">
+                            <p class="address-main">Bureau principal</p>
+                            <p class="address-detail">Keur Massar, Dakar, Sénégal</p>
+                            <p class="address-postal">Code postal: 12345</p>
+                            <div class="card-actions">
+                                <a href="#map" class="action-btn primary">
+                                    <i class="fas fa-map"></i>
+                                    Voir sur la carte
+                                </a>
+                                <a href="https://goo.gl/maps/VOTRE-LIEN" target="_blank" rel="noopener" class="action-btn secondary">
+                                    <i class="fas fa-directions"></i>
+                                    Itinéraire
+                                </a>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="info-card">
-                        <div class="icon-wrapper">
-                            <i class="fas fa-phone"></i>
+                    <div class="info-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card-header">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <h3>Téléphone</h3>
                         </div>
-                        <h3>Téléphone</h3>
-                        <p>+221 77 XXX XX XX</p>
-                        <p>+221 33 XXX XX XX</p>
-                        <a href="tel:+221XXXXXXXX" class="info-link">Appeler maintenant <i class="fas fa-arrow-right"></i></a>
+                        <div class="card-content">
+                            <div class="phone-numbers">
+                                <div class="phone-item">
+                                    <span class="phone-label">Principal</span>
+                                    <a href="tel:+221771234567" class="phone-number">+221 77 123 45 67</a>
+                                </div>
+                                <div class="phone-item">
+                                    <span class="phone-label">Support</span>
+                                    <a href="tel:+221331234567" class="phone-number">+221 33 123 45 67</a>
+                                </div>
+                                <div class="phone-item">
+                                    <span class="phone-label">Urgence</span>
+                                    <a href="tel:+221701234567" class="phone-number">+221 70 123 45 67</a>
+                                </div>
+                            </div>
+                            <div class="card-actions">
+                                <a href="tel:+221771234567" class="action-btn primary">
+                                    <i class="fas fa-phone"></i>
+                                    Appeler maintenant
+                                </a>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="info-card">
-                        <div class="icon-wrapper">
-                            <i class="fas fa-envelope"></i>
+                    <div class="info-card" data-aos="fade-up" data-aos-delay="250">
+                        <div class="card-header">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h3>Email</h3>
                         </div>
-                        <h3>Email</h3>
-                        <p>contact@keurmassar-social.sn</p>
-                        <a href="mailto:contact@keurmassar-social.sn" class="info-link">Envoyer un email <i class="fas fa-arrow-right"></i></a>
+                        <div class="card-content">
+                            <div class="email-addresses">
+                                <div class="email-item">
+                                    <span class="email-label">Général</span>
+                                    <a href="mailto:contact@keurmassar-social.sn" class="email-address">contact@keurmassar-social.sn</a>
+                                </div>
+                                <div class="email-item">
+                                    <span class="email-label">Support</span>
+                                    <a href="mailto:support@keurmassar-social.sn" class="email-address">support@keurmassar-social.sn</a>
+                                </div>
+                                <div class="email-item">
+                                    <span class="email-label">Partenariat</span>
+                                    <a href="mailto:partenariat@keurmassar-social.sn" class="email-address">partenariat@keurmassar-social.sn</a>
+                                </div>
+                            </div>
+                            <div class="card-actions">
+                                <a href="mailto:contact@keurmassar-social.sn" class="action-btn primary">
+                                    <i class="fas fa-envelope"></i>
+                                    Envoyer un email
+                                </a>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="info-card">
-                        <div class="icon-wrapper">
-                            <i class="fas fa-clock"></i>
+                    <div class="info-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card-header">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h3>Horaires</h3>
                         </div>
-                        <h3>Horaires</h3>
-                        <p>Lundi - Vendredi: 9h - 17h</p>
-                        <p>Samedi: 9h - 13h</p>
-                        <p class="status-open">Ouvert actuellement</p>
+                        <div class="card-content">
+                            <div class="schedule">
+                                <div class="schedule-item">
+                                    <span class="day">Lundi - Vendredi</span>
+                                    <span class="time">9h - 17h</span>
+                                </div>
+                                <div class="schedule-item">
+                                    <span class="day">Samedi</span>
+                                    <span class="time">9h - 13h</span>
+                                </div>
+                                <div class="schedule-item">
+                                    <span class="day">Dimanche</span>
+                                    <span class="time">Fermé</span>
+                                </div>
+                            </div>
+                            <div class="status-indicator">
+                                <span class="status-dot open"></span>
+                                <span class="status-text">Ouvert actuellement</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section class="contact-form-section">
-                <h2>Envoyez-nous un message</h2>
-                <form id="contactForm" class="contact-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="nom">Nom complet <span class="required">*</span></label>
-                            <input type="text" id="nom" name="nom" required>
+        <!-- Section formulaire améliorée -->
+        <section class="contact-form-section" data-aos="fade-up" data-aos-delay="150">
+            <div class="container">
+                <div class="form-container">
+                    <div class="form-header">
+                        <h2><i class="fas fa-paper-plane"></i> Envoyez-nous un message</h2>
+                        <p>Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais</p>
+                    </div>
+                    
+                    <form id="contactForm" class="contact-form" novalidate>
+                        <div class="form-progress">
+                            <div class="progress-step active" data-step="1">
+                                <span class="step-number">1</span>
+                                <span class="step-label">Informations</span>
+                            </div>
+                            <div class="progress-step" data-step="2">
+                                <span class="step-number">2</span>
+                                <span class="step-label">Message</span>
+                            </div>
+                            <div class="progress-step" data-step="3">
+                                <span class="step-number">3</span>
+                                <span class="step-label">Confirmation</span>
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="email">Email <span class="required">*</span></label>
-                            <input type="email" id="email" name="email" required>
+                        <!-- Étape 1: Informations personnelles -->
+                        <div class="form-step active" data-step="1">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="nom">
+                                        <i class="fas fa-user"></i>
+                                        Nom complet <span class="required">*</span>
+                                    </label>
+                                    <input type="text" id="nom" name="nom" required>
+                                    <div class="error-message"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">
+                                        <i class="fas fa-envelope"></i>
+                                        Email <span class="required">*</span>
+                                    </label>
+                                    <input type="email" id="email" name="email" required>
+                                    <div class="error-message"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="telephone">
+                                        <i class="fas fa-phone"></i>
+                                        Téléphone
+                                    </label>
+                                    <input type="tel" id="telephone" name="telephone">
+                                    <div class="error-message"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="organisation">
+                                        <i class="fas fa-building"></i>
+                                        Organisation
+                                    </label>
+                                    <input type="text" id="organisation" name="organisation">
+                                    <div class="error-message"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn-next" onclick="nextStep()">
+                                    Suivant <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Étape 2: Message -->
+                        <div class="form-step" data-step="2">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="sujet">
+                                        <i class="fas fa-tag"></i>
+                                        Sujet <span class="required">*</span>
+                                    </label>
+                                    <select id="sujet" name="sujet" required>
+                                        <option value="">Choisissez un sujet</option>
+                                        <option value="information">Demande d'information</option>
+                                        <option value="partenariat">Proposition de partenariat</option>
+                                        <option value="suggestion">Suggestion d'amélioration</option>
+                                        <option value="reclamation">Réclamation</option>
+                                        <option value="inscription">Demande d'inscription</option>
+                                        <option value="autre">Autre</option>
+                                    </select>
+                                    <div class="error-message"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="urgence">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                        Niveau d'urgence
+                                    </label>
+                                    <select id="urgence" name="urgence">
+                                        <option value="normal">Normal</option>
+                                        <option value="important">Important</option>
+                                        <option value="urgent">Urgent</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">
+                                    <i class="fas fa-comment"></i>
+                                    Message <span class="required">*</span>
+                                </label>
+                                <textarea id="message" name="message" rows="6" required placeholder="Décrivez votre demande en détail..."></textarea>
+                                <div class="char-counter">
+                                    <span id="charCount">0</span> / 1000 caractères
+                                </div>
+                                <div class="error-message"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="newsletter" name="newsletter">
+                                    <span class="checkmark"></span>
+                                    Je souhaite recevoir la newsletter et les actualités
+                                </label>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn-prev" onclick="prevStep()">
+                                    <i class="fas fa-arrow-left"></i> Précédent
+                                </button>
+                                <button type="button" class="btn-next" onclick="nextStep()">
+                                    Suivant <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Étape 3: Confirmation -->
+                        <div class="form-step" data-step="3">
+                            <div class="confirmation-step">
+                                <div class="confirmation-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <h3>Récapitulatif de votre message</h3>
+                                <div class="confirmation-details">
+                                    <div class="detail-item">
+                                        <strong>Nom:</strong> <span id="confirm-nom"></span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <strong>Email:</strong> <span id="confirm-email"></span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <strong>Sujet:</strong> <span id="confirm-sujet"></span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <strong>Message:</strong> <span id="confirm-message"></span>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="button" class="btn-prev" onclick="prevStep()">
+                                        <i class="fas fa-arrow-left"></i> Modifier
+                                    </button>
+                                    <button type="submit" class="btn-submit">
+                                        <i class="fas fa-paper-plane"></i> Envoyer le message
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section FAQ -->
+        <section class="faq-section" data-aos="fade-up" data-aos-delay="200">
+            <div class="container">
+                <div class="section-header">
+                    <h2><i class="fas fa-question-circle"></i> Questions Fréquentes</h2>
+                    <p>Trouvez rapidement des réponses à vos questions</p>
+                </div>
+                
+                <div class="faq-container">
+                    <div class="faq-item" data-aos="fade-up">
+                        <div class="faq-question">
+                            <h3>Comment puis-je m'inscrire à l'annuaire ?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Pour vous inscrire à l'annuaire, vous pouvez utiliser le formulaire de contact en sélectionnant "Demande d'inscription" comme sujet, ou nous contacter directement par téléphone ou email.</p>
                         </div>
                     </div>
 
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="telephone">Téléphone</label>
-                            <input type="tel" id="telephone" name="telephone">
+                    <div class="faq-item" data-aos="fade-up">
+                        <div class="faq-question">
+                            <h3>Quels sont les critères d'éligibilité ?</h3>
+                            <i class="fas fa-chevron-down"></i>
                         </div>
-
-                        <div class="form-group">
-                            <label for="sujet">Sujet <span class="required">*</span></label>
-                            <select id="sujet" name="sujet" required>
-                                <option value="">Choisissez un sujet</option>
-                                <option value="information">Demande d'information</option>
-                                <option value="partenariat">Proposition de partenariat</option>
-                                <option value="suggestion">Suggestion</option>
-                                <option value="autre">Autre</option>
-                            </select>
+                        <div class="faq-answer">
+                            <p>Pour être éligible, votre organisation doit être basée à Keur Massar, avoir un impact social positif et respecter les valeurs de l'économie sociale et solidaire.</p>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="message">Message <span class="required">*</span></label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
+                    <div class="faq-item" data-aos="fade-up">
+                        <div class="faq-question">
+                            <h3>Combien de temps faut-il pour recevoir une réponse ?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Nous nous engageons à répondre à tous les messages dans un délai maximum de 24 heures ouvrables.</p>
+                        </div>
                     </div>
 
-                    <button type="submit" class="submit-btn">
-                        <i class="fas fa-paper-plane"></i> Envoyer le message
-                    </button>
-                </form>
-            </section>
-        </div>
+                    <div class="faq-item" data-aos="fade-up">
+                        <div class="faq-question">
+                            <h3>Puis-je modifier mes informations après inscription ?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Oui, vous pouvez modifier vos informations à tout moment en nous contactant ou en utilisant votre espace membre si vous en avez un.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <section class="map-section" id="map">
-            <h2>Notre Localisation</h2>
-            <div class="map-container">
-                <div id="map"></div>
-                <div class="map-info">
-                    <h3>Comment nous trouver</h3>
-                    <p>Nous sommes situés au cœur de Keur Massar, facilement accessible par les transports en commun.</p>
-                    <a href="https://goo.gl/maps/VOTRE-LIEN" target="_blank" class="directions-btn">
-                        <i class="fas fa-directions"></i> Obtenir l'itinéraire
+        <!-- Section carte améliorée -->
+        <section class="map-section" id="map" data-aos="fade-up" data-aos-delay="250">
+            <div class="container">
+                <div class="section-header">
+                    <h2><i class="fas fa-map-marked-alt"></i> Notre Localisation</h2>
+                    <p>Venez nous rendre visite ou trouvez-nous facilement</p>
+                </div>
+                
+                <div class="map-container">
+                    <div class="map-wrapper">
+                        <div id="map"></div>
+                        <div class="map-overlay">
+                            <div class="map-info-card">
+                                <h3>Bureau Keur Massar Social</h3>
+                                <p><i class="fas fa-map-marker-alt"></i> Keur Massar, Dakar, Sénégal</p>
+                                <p><i class="fas fa-clock"></i> Lun-Ven: 9h-17h, Sam: 9h-13h</p>
+                                <div class="map-actions">
+                                    <a href="https://goo.gl/maps/VOTRE-LIEN" target="_blank" rel="noopener" class="map-btn primary">
+                                        <i class="fas fa-directions"></i> Itinéraire
+                                    </a>
+                                    <a href="tel:+221771234567" class="map-btn secondary">
+                                        <i class="fas fa-phone"></i> Appeler
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transport-info">
+                        <h3>Comment nous rejoindre</h3>
+                        <div class="transport-options">
+                            <div class="transport-option">
+                                <i class="fas fa-bus"></i>
+                                <div class="transport-details">
+                                    <h4>Bus</h4>
+                                    <p>Lignes 12, 15, 23 - Arrêt "Keur Massar Centre"</p>
+                                </div>
+                            </div>
+                            <div class="transport-option">
+                                <i class="fas fa-car"></i>
+                                <div class="transport-details">
+                                    <h4>Voiture</h4>
+                                    <p>Parking gratuit disponible devant le bureau</p>
+                                </div>
+                            </div>
+                            <div class="transport-option">
+                                <i class="fas fa-walking"></i>
+                                <div class="transport-details">
+                                    <h4>À pied</h4>
+                                    <p>5 minutes depuis le centre-ville de Keur Massar</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section réseaux sociaux -->
+        <section class="social-section" data-aos="fade-up" data-aos-delay="300">
+            <div class="container">
+                <div class="section-header">
+                    <h2><i class="fas fa-share-alt"></i> Suivez-nous</h2>
+                    <p>Restez connecté avec nous sur les réseaux sociaux</p>
+                </div>
+                
+                <div class="social-grid">
+                    <a href="#" class="social-card facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        <h3>Facebook</h3>
+                        <p>Suivez nos actualités</p>
+                        <span class="follower-count">2.5K abonnés</span>
                     </a>
+                    
+                    <a href="#" class="social-card twitter">
+                        <i class="fab fa-twitter"></i>
+                        <h3>Twitter</h3>
+                        <p>Restez informé</p>
+                        <span class="follower-count">1.8K abonnés</span>
+                    </a>
+                    
+                    <a href="#" class="social-card linkedin">
+                        <i class="fab fa-linkedin-in"></i>
+                        <h3>LinkedIn</h3>
+                        <p>Réseau professionnel</p>
+                        <span class="follower-count">950 connexions</span>
+                    </a>
+                    
+
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <!-- Footer identique aux autres pages -->
+        <div class="footer-content">
+            <div class="footer-section about">
+                <img src="../images/logo.png" alt="Logo PAESSE" class="footer-logo">
+                <h4>À propos</h4>
+                <p>Plateforme des Acteurs de l'Economie Sociale, Solidaire et Environnementale de Keur Massar (PAESSE) dédiée à l'économie sociale de Keur Massar</p>
+            </div>
+            
+            <div class="footer-section links">
+                <h4>Liens Rapides</h4>
+                <ul>
+                    <li><a href="annuaire.html">Annuaire</a></li>
+                    <li><a href="actualites.html">Actualités</a></li>
+                    <li><a href="carte.html">Carte</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section contact">
+                <h4>Contact</h4>
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> Keur Massar, Dakar, Sénégal</p>
+                    <p><i class="fas fa-phone"></i> +221 33 878 29 60</p>
+                    <p><i class="fas fa-envelope"></i> contact@paessekm.com</p>
+                </div>
+            </div>
+
+            <div class="footer-section social">
+                <h4>Suivez-nous</h4>
+                <div class="social-links">
+                    <a href="#" class="social-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-btn linkedin"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-btn instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="newsletter">
+                    <h5>Newsletter</h5>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Votre email">
+                        <button type="submit" title="S'inscrire à la newsletter"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; 2024 PAESSKM. Tous droits réservés</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Mentions légales</a> |
+                    <a href="#">Politique de confidentialité</a> |
+                    <a href="https://negus-agency.com/">Conçu par Negus Agency</a> |
+                    <a href="../admin-login.html" class="admin-login-btn">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Admin</span>
+                    </a>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <!-- Leaflet JS pour la carte -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/siteAuthUI.js"></script>
     <script src="../js/contact.js"></script>
 </body>
 </html>

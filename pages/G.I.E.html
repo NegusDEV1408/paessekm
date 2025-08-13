@@ -3,203 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G.I.E de Keur Massar - Base de données des entreprises</title>
+    <title>G.I.E - Keur Massar Social</title>
+    <link rel="stylesheet" href="../css/unified-colors.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/pages-common.css">
     <link rel="stylesheet" href="../css/G.I.E.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <!-- Menu principal -->
     <header class="header-transparent">
         <nav class="main-nav">
             <div class="nav-container">
                 <div class="logo">
-                    <img src="../images/logo.png" alt="Logo Keur Massar Social">
+                    <a href="../index.html">
+                        <img src="../images/logo.png" alt="Logo Keur Massar Social">
+                    </a>
                 </div>
-    
+
                 <div class="nav-elements">
                     <ul class="nav-links">
                         <li class="nav-item">
-                            <a href="../index.html" class="active">
+                            <a href="../index.html">
                                 <i class="fas fa-home"></i>
                                 <span>Accueil</span>
                             </a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a href="../pages/annuaire.html">
+                            <a href="annuaire.html">
                                 <i class="fas fa-book"></i>
                                 <span>Annuaire</span>
                                 <i class="fas fa-chevron-down"></i>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="../pages/annuaire.html#entreprises">Entreprises</a></li>
-                                <li><a href="../pages/annuaire.html#associations">Associations</a></li>
-                                <li><a href="../pages/annuaire.html#artisans">Artisans</a></li>
+                                <li><a href="entreprises.html">Entreprises</a></li>
+                                <li><a href="G.I.E.html" class="active">G.I.E</a></li>
+                                <li><a href="association.html">Associations</a></li>
+                                <li><a href="fondation.html">Fondation</a></li>
+                                <li><a href="cooperatives.html">Cooperatives</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="../pages/carte.html">
+                            <a href="carte.html">
                                 <i class="fas fa-map-marked-alt"></i>
                                 <span>Carte</span>
                             </a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a href="../pages/actualites.html">
+                        <li class="nav-item">
+                            <a href="actualites.html">
                                 <i class="fas fa-newspaper"></i>
                                 <span>Actualités</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="../pages/actualites.html#evenements">Événements</a></li>
-                                <li><a href="../pages/actualites.html#news">Nouvelles</a></li>
-                                <li><a href="../pages/actualites.html#blog">Blog</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="../pages/G.I.E.html">
-                                <i class="fas fa-building"></i>
-                                <span>G.I.E</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../pages/contact.html">
+                            <a href="contact.html">
                                 <i class="fas fa-envelope"></i>
                                 <span>Contact</span>
                             </a>
                         </li>
                     </ul>
-    
+
                     <div class="nav-buttons">
-                        <button class="search-btn">
-                            <i class="fas fa-search"></i>
-                        </button>
-                        <button class="theme-toggle">
-                            <i class="fas fa-moon"></i>
-                        </button>
-                        <button class="menu-toggle">
-                            <i class="fas fa-bars"></i>
-                        </button>
+                        <a href="../user-login.html" class="member-btn" title="Espace membre">
+                            <i class="fas fa-user"></i>
+                            <span>Espace membre</span>
+                        </a>
                     </div>
                 </div>
             </div>
         </nav>
-    
-        <!-- Barre de recherche -->
-        <div class="search-overlay">
-            <div class="search-container">
-                <input type="text" placeholder="Rechercher...">
-                <button class="close-search">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-        </div>
     </header>
-    <!-- Header identique -->
 
     <main class="gie-main">
+        <!-- Section Hero -->
         <section class="gie-hero">
             <div class="hero-content">
-                <h1>Groupements d'Intérêt Économique</h1>
-                <p>Découvrez les G.I.E. actifs dans le département de Keur Massar</p>
-            </div>
-            <div class="hero-stats">
-                <div class="stat-card">
-                    <i class="fas fa-building"></i>
-                    <span class="stat-number" id="totalGIE">150</span>
-                    <span class="stat-label">G.I.E. Enregistrés</span>
-                </div>
-                <div class="stat-card">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span class="stat-number" id="totalCommunes">6</span>
-                    <span class="stat-label">Communes</span>
-                </div>
-                <div class="stat-card">
-                    <i class="fas fa-industry"></i>
-                    <span class="stat-number" id="totalSectors">12</span>
-                    <span class="stat-label">Secteurs d'activité</span>
+                <h1>G.I.E de Keur Massar</h1>
+                <p>Découvrez les Groupements d'Intérêt Économique qui dynamisent notre économie locale</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-building"></i>
+                        <div class="stat-info">
+                            <span class="stat-number" id="total-gie">600</span>
+                            <span class="stat-label">G.I.E</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="stat-info">
+                            <span class="stat-number" id="total-communes">6</span>
+                            <span class="stat-label">Communes</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-industry"></i>
+                        <div class="stat-info">
+                            <span class="stat-number" id="total-sectors">15</span>
+                            <span class="stat-label">Secteurs</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-users"></i>
+                        <div class="stat-info">
+                            <span class="stat-number" id="total-members">0</span>
+                            <span class="stat-label">Membres</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- Section de recherche et filtres -->
         <section class="search-section">
-            <div class="search-container">
-                <div class="search-filters">
-                    <div class="search-box">
-                        <i class="fas fa-search"></i>
-                        <input type="text" id="searchInput" placeholder="Rechercher un G.I.E...">
-                    </div>
-
-                    <div class="filter-group">
-                        <select id="communeFilter">
-                            <option value="">Toutes les communes</option>
-                            <option value="Keur Massar Nord">Keur Massar Nord</option>
-                            <option value="Keur Massar Sud">Keur Massar Sud</option>
-                            <option value="Yeumbeul Nord">Yeumbeul Nord</option>
-                            <option value="Yeumbeul Sud">Yeumbeul Sud</option>
-                            <option value="Jaxaay Parcelles">Jaxaay Parcelles</option>
-                            <option value="Malika">Malika</option>
-                        </select>
-
-                        <select id="sectorFilter">
-                            <option value="">Tous les secteurs</option>
-                            <option value="Agriculture">Agriculture</option>
-                            <option value="Commerce">Commerce</option>
-                            <option value="Artisanat">Artisanat</option>
-                            <option value="Services">Services</option>
-                            <option value="Transport">Transport</option>
-                        </select>
-
-                        <select id="sortFilter">
-                            <option value="name">Trier par nom</option>
-                            <option value="date">Date de création</option>
-                            <option value="size">Taille</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="view-toggle">
-                    <button class="view-btn active" data-view="grid">
-                        <i class="fas fa-th"></i>
-                    </button>
-                    <button class="view-btn" data-view="list">
-                        <i class="fas fa-list"></i>
-                    </button>
+            <div class="search-filters">
+                <div class="filter-group">
+                    <select id="communeFilter" title="Filtrer par commune">
+                        <option value="">Toutes les communes</option>
+                    </select>
+                    
+                    <select id="sectorFilter" title="Filtrer par secteur">
+                        <option value="">Tous les secteurs</option>
+                    </select>
+                    
+                    <select id="sortFilter" title="Trier les résultats">
+                        <option value="nom">Trier par nom</option>
+                        <option value="commune">Trier par commune</option>
+                        <option value="nombre">Trier par nombre de membres</option>
+                        <option value="dateCreation">Trier par date de création</option>
+                    </select>
+                    
+                    <select id="typeFilter" title="Filtrer par type">
+                        <option value="">Tous les types</option>
+                    </select>
                 </div>
             </div>
         </section>
 
+        <!-- Section des résultats -->
         <section class="results-section">
             <div class="results-header">
-                <p class="results-count"><span id="resultCount">0</span> résultats trouvés</p>
+                <div class="results-count">
+                    <span id="resultCount">0</span> G.I.E trouvé(s)
+                </div>
+                
                 <div class="results-actions">
-                    <button class="action-btn" id="exportBtn">
-                        <i class="fas fa-download"></i> Exporter
-                    </button>
-                    <button class="action-btn" id="printBtn">
-                        <i class="fas fa-print"></i> Imprimer
-                    </button>
+                    <div class="view-options">
+                        <button class="view-btn active" data-view="grid" title="Vue grille">
+                            <i class="fas fa-th"></i>
+                            Grille
+                        </button>
+                        <button class="view-btn" data-view="list" title="Vue liste">
+                            <i class="fas fa-list"></i>
+                            Liste
+                        </button>
+                    </div>
                 </div>
             </div>
 
-            <div class="gie-grid" id="gieContainer">
-                <!-- Les cartes GIE seront générées ici dynamiquement -->
+            <!-- Grille des G.I.E -->
+            <div class="gie-grid" id="gieGrid">
+                <!-- Les cartes G.I.E seront générées dynamiquement -->
             </div>
 
-            <div class="pagination">
-                <button class="pagination-btn" id="prevPage" disabled>
-                    <i class="fas fa-chevron-left"></i> Précédent
-                </button>
-                <div class="page-numbers" id="pageNumbers">
-                    <!-- Les numéros de page seront générés ici -->
-                </div>
-                <button class="pagination-btn" id="nextPage">
-                    Suivant <i class="fas fa-chevron-right"></i>
-                </button>
+            <!-- Pagination -->
+            <div class="pagination" id="pagination">
+                <!-- La pagination sera générée dynamiquement -->
             </div>
         </section>
     </main>
 
-    <!-- Footer identique -->
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <img src="../images/logo.png" alt="Logo PAESSE" class="footer-logo">
+                <h4>À propos</h4>
+                <p>Plateforme des Acteurs de l'Economie Sociale, Solidaire et Environnementale de Keur Massar (PAESSE) dédiée à l'économie sociale de Keur Massar</p>
+            </div>
+            
+            <div class="footer-section links">
+                <h4>Liens Rapides</h4>
+                <ul>
+                    <li><a href="annuaire.html">Annuaire</a></li>
+                    <li><a href="actualites.html">Actualités</a></li>
+                    <li><a href="carte.html">Carte</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
 
+            <div class="footer-section contact">
+                <h4>Contact</h4>
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> Keur Massar, Dakar, Sénégal</p>
+                    <p><i class="fas fa-phone"></i> +221 33 878 29 60</p>
+                    <p><i class="fas fa-envelope"></i> contact@paessekm.com</p>
+                </div>
+            </div>
+
+            <div class="footer-section social">
+                <h4>Suivez-nous</h4>
+                <div class="social-links">
+                    <a href="#" class="social-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-btn linkedin"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-btn instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="newsletter">
+                    <h5>Newsletter</h5>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Votre email">
+                        <button type="submit" title="S'inscrire à la newsletter"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; 2024 PAESSKM. Tous droits réservés</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Mentions légales</a> |
+                    <a href="#">Politique de confidentialité</a> |
+                    <a href="https://negus-agency.com/">Conçu par Negus Agency</a> |
+                    <a href="../admin-login.html" class="admin-login-btn">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Admin</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/gieStorage.js"></script>
+    <script src="../js/siteAuthUI.js"></script>
+    <script src="../js/gieDatabase.js"></script>
     <script src="../js/G.I.E.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/siteAuthUI.js"></script>
 </body>
 </html>
