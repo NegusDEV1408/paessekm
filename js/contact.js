@@ -3,8 +3,8 @@ const CONFIG = {
     currentStep: 1,
     totalSteps: 3,
     maxMessageLength: 1000,
-    mapCenter: [14.7645, -17.3660], // Coordonnées de Keur Massar
-    mapZoom: 15
+    mapCenter: [14.778491997055875, -17.31354165659888], // Coordonnées du Conseil départemental de Keur Massar
+    mapZoom: 16
 };
 
 // État global de l'application
