@@ -600,74 +600,104 @@ textarea {
     width: 80px;
 }
 
-/* Section FAQ */
+/* Section FAQ - Version corrigée */
 .faq-section {
     padding: 4rem 0;
-    background: white;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
 .faq-container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .faq-item {
     background: white;
-    border-radius: 10px;
-    margin-bottom: 1rem;
-    box-shadow: var(--shadow);
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     overflow: hidden;
-    transition: var(--transition);
+    transition: all 0.3s ease;
+    border: 1px solid #e9ecef;
 }
 
 .faq-item:hover {
-    box-shadow: var(--shadow-hover);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    transform: translateY(-2px);
 }
 
 .faq-question {
-    padding: 1.5rem;
+    padding: 1.8rem;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: var(--bg-light);
-    transition: var(--transition);
+    background: white;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
 }
 
 .faq-question:hover {
-    background: linear-gradient(135deg, var(--secondary-color), var(--secondary-light));
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
     color: white;
 }
 
 .faq-question h3 {
     margin: 0;
     font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.faq-question:hover h3 {
+    color: white;
 }
 
 .faq-question i {
-    transition: var(--transition);
+    transition: all 0.3s ease;
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+}
+
+.faq-question:hover i {
+    color: white;
+}
+
+.faq-item.active .faq-question {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: white;
+    border-bottom-color: rgba(255,255,255,0.2);
+}
+
+.faq-item.active .faq-question h3 {
+    color: white;
 }
 
 .faq-item.active .faq-question i {
+    color: white;
     transform: rotate(180deg);
 }
 
 .faq-answer {
-    padding: 0 1.5rem;
+    padding: 0 1.8rem;
     max-height: 0;
     overflow: hidden;
-    transition: var(--transition);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: rgba(171, 196, 27, 0.05);
 }
 
 .faq-item.active .faq-answer {
-    padding: 1.5rem;
-    max-height: 200px;
+    padding: 1.8rem;
+    max-height: 300px;
 }
 
 .faq-answer p {
     margin: 0;
-    line-height: 1.6;
+    line-height: 1.7;
     color: var(--text-secondary);
+    font-size: 0.95rem;
 }
 
 /* Section carte */

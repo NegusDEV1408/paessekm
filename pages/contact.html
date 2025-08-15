@@ -496,5 +496,41 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="../js/siteAuthUI.js"></script>
     <script src="../js/contact.js"></script>
+    
+    <!-- Script pour l'accordéon FAQ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialisation AOS
+            AOS.init({
+                duration: 800,
+                once: true
+            });
+            
+            // Gestion de l'accordéon FAQ
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', function() {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Fermer tous les autres éléments
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Basculer l'état actuel
+                    if (isActive) {
+                        item.classList.remove('active');
+                    } else {
+                        item.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
