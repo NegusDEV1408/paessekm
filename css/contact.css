@@ -628,7 +628,7 @@ textarea {
 }
 
 .faq-question {
-    padding: 1.8rem;
+    padding: 1.5rem;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -681,16 +681,17 @@ textarea {
 }
 
 .faq-answer {
-    padding: 0 1.8rem;
+    padding: 0 1.5rem;
     max-height: 0;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    background: rgba(171, 196, 27, 0.05);
+    background: #f8f9fa;
 }
 
 .faq-item.active .faq-answer {
-    padding: 1.8rem;
+    padding: 1.5rem;
     max-height: 300px;
+    border-top: 1px solid #e9ecef;
 }
 
 .faq-answer p {
@@ -1061,6 +1062,26 @@ textarea {
     .progress-step {
         flex-direction: row;
         gap: 1rem;
+    }
+    
+    .faq-container {
+        padding: 0 0.5rem;
+    }
+    
+    .faq-question {
+        padding: 1.2rem;
+    }
+    
+    .faq-question h3 {
+        font-size: 1rem;
+    }
+    
+    .faq-item.active .faq-answer {
+        padding: 1.2rem;
+    }
+    
+    .faq-answer p {
+        font-size: 0.9rem;
     }
 }
 
