@@ -349,11 +349,11 @@
                         <div id="map"></div>
                         <div class="map-overlay">
                             <div class="map-info-card">
-                                <h3>Bureau Keur Massar Social</h3>
-                                <p><i class="fas fa-map-marker-alt"></i> Keur Massar, Dakar, Sénégal</p>
+                                <h3>Conseil départemental de Keur Massar</h3>
+                                <p><i class="fas fa-map-marker-alt"></i> Route de Rufisque, Keur Massar, Dakar, Sénégal</p>
                                 <p><i class="fas fa-clock"></i> Lun-Ven: 9h-17h, Sam: 9h-13h</p>
                                 <div class="map-actions">
-                                    <a href="https://goo.gl/maps/VOTRE-LIEN" target="_blank" rel="noopener" class="map-btn primary">
+                                    <a href="https://maps.app.goo.gl/4C6HVUZXtEX9NnGQ8" target="_blank" rel="noopener" class="map-btn primary">
                                         <i class="fas fa-directions"></i> Itinéraire
                                     </a>
                                     <a href="tel:+221771234567" class="map-btn secondary">
@@ -496,41 +496,5 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="../js/siteAuthUI.js"></script>
     <script src="../js/contact.js"></script>
-    
-    <!-- Script pour l'accordéon FAQ -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialisation AOS
-            AOS.init({
-                duration: 800,
-                once: true
-            });
-            
-            // Gestion de l'accordéon FAQ
-            const faqItems = document.querySelectorAll('.faq-item');
-            
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                
-                question.addEventListener('click', function() {
-                    const isActive = item.classList.contains('active');
-                    
-                    // Fermer tous les autres éléments
-                    faqItems.forEach(otherItem => {
-                        if (otherItem !== item) {
-                            otherItem.classList.remove('active');
-                        }
-                    });
-                    
-                    // Basculer l'état actuel
-                    if (isActive) {
-                        item.classList.remove('active');
-                    } else {
-                        item.classList.add('active');
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>
