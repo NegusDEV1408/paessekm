@@ -117,9 +117,14 @@
                     <div class="form-header">
                         <h2><i class="fas fa-paper-plane"></i> Envoyez-nous un message</h2>
                         <p>Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais</p>
-                        <button type="button" onclick="testMessageSystem()" style="margin-top: 10px; padding: 8px 16px; background: var(--secondary-color); color: white; border: none; border-radius: 4px; cursor: pointer;">
-                            <i class="fas fa-test-tube"></i> Test du système
-                        </button>
+                        <div style="margin-top: 10px; display: flex; gap: 10px;">
+                            <button type="button" onclick="testMessageSystem()" style="padding: 8px 16px; background: var(--secondary-color); color: white; border: none; border-radius: 4px; cursor: pointer;">
+                                <i class="fas fa-test-tube"></i> Test du système
+                            </button>
+                            <button type="button" onclick="testFormSteps()" style="padding: 8px 16px; background: var(--accent-color); color: white; border: none; border-radius: 4px; cursor: pointer;">
+                                <i class="fas fa-arrow-right"></i> Test étapes
+                            </button>
+                        </div>
                     </div>
                     
                     <form id="contactForm" class="contact-form" novalidate>

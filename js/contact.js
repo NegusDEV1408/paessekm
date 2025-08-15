@@ -23,6 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeAOS();
     updateOfficeStatus();
     
+    // Rendre les fonctions globales pour les boutons onclick
+    window.nextStep = nextStep;
+    window.prevStep = prevStep;
+    window.testFormSteps = testFormSteps;
+    
     // Test du localStorage
     console.log('Test localStorage - Messages existants:', JSON.parse(localStorage.getItem('contactMessages') || '[]').length);
     
@@ -90,24 +95,33 @@ function setupEventListeners() {
 
 // Gestion du formulaire multi-étapes
 function nextStep() {
+    console.log('nextStep appelé - Étape actuelle:', CONFIG.currentStep);
     if (validateCurrentStep()) {
+        console.log('Validation réussie, passage à l\'étape suivante');
         if (CONFIG.currentStep < CONFIG.totalSteps) {
             CONFIG.currentStep++;
+            console.log('Nouvelle étape:', CONFIG.currentStep);
             updateFormDisplay();
             updateProgressBar();
         }
+    } else {
+        console.log('Validation échouée');
     }
 }
 
 function prevStep() {
+    console.log('prevStep appelé - Étape actuelle:', CONFIG.currentStep);
     if (CONFIG.currentStep > 1) {
         CONFIG.currentStep--;
+        console.log('Nouvelle étape:', CONFIG.currentStep);
         updateFormDisplay();
         updateProgressBar();
     }
 }
 
 function updateFormDisplay() {
+    console.log('updateFormDisplay - Étape:', CONFIG.currentStep);
+    
     // Masquer toutes les étapes
     const steps = document.querySelectorAll('.form-step');
     steps.forEach(step => {
@@ -116,8 +130,12 @@ function updateFormDisplay() {
 
     // Afficher l'étape actuelle
     const currentStepElement = document.querySelector(`[data-step="${CONFIG.currentStep}"]`);
+    console.log('Élément de l\'étape trouvé:', currentStepElement);
     if (currentStepElement) {
         currentStepElement.classList.add('active');
+        console.log('Étape activée:', CONFIG.currentStep);
+    } else {
+        console.error('Élément de l\'étape non trouvé pour:', CONFIG.currentStep);
     }
 
     // Mettre à jour les boutons
@@ -852,4 +870,29 @@ function testMessageSystem() {
             window.open('../admin-dashboard.html', '_blank');
         }
     }, 2000);
+}
+
+// Fonction de test pour les étapes du formulaire
+function testFormSteps() {
+    console.log('Test des étapes du formulaire...');
+    console.log('Étape actuelle:', CONFIG.currentStep);
+    console.log('Total étapes:', CONFIG.totalSteps);
+    
+    // Vérifier les éléments des étapes
+    for (let i = 1; i <= 3; i++) {
+        const stepElement = document.querySelector(`[data-step="${i}"]`);
+        console.log(`Étape ${i}:`, stepElement ? 'Trouvée' : 'Non trouvée');
+        if (stepElement) {
+            console.log(`Étape ${i} classes:`, stepElement.className);
+        }
+    }
+    
+    // Tester la navigation
+    console.log('Test navigation vers étape 2...');
+    nextStep();
+    
+    setTimeout(() => {
+        console.log('Test navigation vers étape 3...');
+        nextStep();
+    }, 1000);
 }
