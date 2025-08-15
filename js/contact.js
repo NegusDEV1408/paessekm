@@ -353,7 +353,27 @@ function handleFormSubmit(event) {
 
     // Simulation d'un délai d'envoi
     setTimeout(() => {
-        // Ici, vous ajouteriez le code pour envoyer les données au serveur
+        // Sauvegarder le message dans le localStorage
+        const messageData = {
+            id: 'MSG_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+            nom: formData.get('nom'),
+            email: formData.get('email'),
+            sujet: formData.get('sujet'),
+            message: formData.get('message'),
+            urgence: formData.get('urgence'),
+            newsletter: formData.get('newsletter') === 'on',
+            dateEnvoi: new Date().toISOString(),
+            statut: 'new',
+            lu: false,
+            repondu: false
+        };
+        
+        // Récupérer les messages existants
+        const existingMessages = JSON.parse(localStorage.getItem('contactMessages') || '[]');
+        existingMessages.unshift(messageData); // Ajouter au début
+        localStorage.setItem('contactMessages', JSON.stringify(existingMessages));
+        
+        console.log('Message sauvegardé:', messageData);
         console.log('Données du formulaire:', Object.fromEntries(formData));
         
         showNotification('Votre message a été envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.', 'success');

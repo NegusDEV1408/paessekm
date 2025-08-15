@@ -24,6 +24,7 @@
             <li><a href="#members"><i class="fas fa-id-badge"></i> Gestion Membres</a></li>
             <li><a href="#gie"><i class="fas fa-building"></i> Gestion G.I.E.</a></li>
             <li><a href="#associations"><i class="fas fa-handshake"></i> Gestion Associations</a></li>
+            <li><a href="#messages"><i class="fas fa-envelope"></i> Messages Contact</a></li>
             <li><a href="#settings"><i class="fas fa-cog"></i> Paramètres</a></li>
             
         </ul>
@@ -423,6 +424,56 @@
                 </table>
             </div>
         </section>
+
+        <!-- Section Messages Contact -->
+        <section id="messages" class="dashboard-section" style="display: none;">
+            <div class="section-header">
+                <h2><i class="fas fa-envelope"></i> Messages de Contact</h2>
+                <p>Gestion des messages reçus via le formulaire de contact</p>
+            </div>
+            
+            <div class="messages-container">
+                <div class="messages-header">
+                    <div class="messages-filters">
+                        <select id="message-status-filter" class="filter-select">
+                            <option value="all">Tous les messages</option>
+                            <option value="new">Nouveaux</option>
+                            <option value="read">Lus</option>
+                            <option value="replied">Répondus</option>
+                        </select>
+                        <select id="message-type-filter" class="filter-select">
+                            <option value="all">Tous les types</option>
+                            <option value="question">Question</option>
+                            <option value="reclamation">Réclamation</option>
+                            <option value="inscription">Demande d'inscription</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+                    <div class="messages-actions">
+                        <button class="action-btn" onclick="markAllAsRead()">
+                            <i class="fas fa-check-double"></i> Tout marquer comme lu
+                        </button>
+                        <button class="action-btn delete-btn" onclick="deleteSelectedMessages()">
+                            <i class="fas fa-trash"></i> Supprimer sélectionnés
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="messages-list" id="messages-list">
+                    <!-- Les messages seront chargés ici dynamiquement -->
+                </div>
+                
+                <div class="messages-pagination">
+                    <button class="pagination-btn" onclick="previousPage()">
+                        <i class="fas fa-chevron-left"></i> Précédent
+                    </button>
+                    <span class="page-info">Page <span id="current-page">1</span> sur <span id="total-pages">1</span></span>
+                    <button class="pagination-btn" onclick="nextPage()">
+                        Suivant <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
         <div class="toast-container" id="toast-container"></div>
     </main>
 
@@ -482,6 +533,7 @@
     <script src="js/userStorage.js"></script>
     <script src="js/siteUserStorage.js"></script>
     <script src="js/gieDatabase.js"></script>
+    <script src="js/messagesManager.js"></script>
     <script src="js/admin.js"></script>
     <script>
         // S'assurer que le userStorage par défaut a bien un Super Admin
