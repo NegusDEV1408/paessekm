@@ -462,14 +462,14 @@ function initializeMap() {
         // Popup du marqueur
         officeMarker.bindPopup(`
             <div class="map-popup">
-                <h3>Bureau Keur Massar Social</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Keur Massar, Dakar, Sénégal</p>
+                <h3>Bureau Conseil Départemental de Keur Massar</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Route de Rufisque, Keur Massar, Dakar, Sénégal</p>
                 <p><i class="fas fa-clock"></i> Lun-Ven: 9h-17h, Sam: 9h-13h</p>
                 <div class="popup-actions">
                     <a href="tel:+221771234567" class="popup-btn">
                         <i class="fas fa-phone"></i> Appeler
                     </a>
-                    <a href="https://goo.gl/maps/VOTRE-LIEN" target="_blank" rel="noopener" class="popup-btn">
+                    <a href="https://maps.app.goo.gl/4C6HVUZXtEX9NnGQ8" target="_blank" rel="noopener" class="popup-btn">
                         <i class="fas fa-directions"></i> Itinéraire
                     </a>
                 </div>
@@ -485,7 +485,7 @@ function initializeMap() {
             <div class="map-error">
                 <i class="fas fa-map-marked-alt"></i>
                 <p>Impossible de charger la carte</p>
-                <a href="https://goo.gl/maps/VOTRE-LIEN" target="_blank" rel="noopener" class="map-link">
+                <a href="https://maps.app.goo.gl/4C6HVUZXtEX9NnGQ8" target="_blank" rel="noopener" class="map-link">
                     Voir sur Google Maps
                 </a>
             </div>
