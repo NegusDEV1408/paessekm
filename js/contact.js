@@ -16,11 +16,22 @@ let appState = {
 
 // Initialisation de l'application
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('Contact.js chargé - Initialisation...');
     initializeApp();
     setupEventListeners();
     initializeMap();
     initializeAOS();
     updateOfficeStatus();
+    
+    // Test du localStorage
+    console.log('Test localStorage - Messages existants:', JSON.parse(localStorage.getItem('contactMessages') || '[]').length);
+    
+    // Test des notifications
+    setTimeout(() => {
+        showNotification('Système de contact initialisé avec succès', 'success');
+    }, 1000);
+    
+    console.log('Contact.js initialisé avec succès');
 });
 
 // Initialisation de l'application
@@ -35,8 +46,12 @@ function initializeApp() {
 function setupEventListeners() {
     // Formulaire
     const form = document.getElementById('contactForm');
+    console.log('Formulaire trouvé:', form);
     if (form) {
         form.addEventListener('submit', handleFormSubmit);
+        console.log('Écouteur d\'événement submit ajouté au formulaire');
+    } else {
+        console.error('Formulaire contactForm non trouvé !');
     }
 
     // Champs de formulaire
@@ -329,11 +344,16 @@ function getSubjectLabel(value) {
 
 // Soumission du formulaire
 function handleFormSubmit(event) {
+    console.log('Soumission du formulaire détectée');
     event.preventDefault();
     
-    if (appState.isSubmitting) return;
+    if (appState.isSubmitting) {
+        console.log('Formulaire déjà en cours d\'envoi');
+        return;
+    }
     
     if (!validateCurrentStep()) {
+        console.log('Validation échouée');
         showNotification('Veuillez corriger les erreurs dans le formulaire', 'error');
         return;
     }
@@ -353,6 +373,8 @@ function handleFormSubmit(event) {
 
     // Simulation d'un délai d'envoi
     setTimeout(() => {
+        console.log('Traitement du message...');
+        
         // Sauvegarder le message dans le localStorage
         const messageData = {
             id: 'MSG_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
@@ -368,13 +390,17 @@ function handleFormSubmit(event) {
             repondu: false
         };
         
+        console.log('Données du message:', messageData);
+        
         // Récupérer les messages existants
         const existingMessages = JSON.parse(localStorage.getItem('contactMessages') || '[]');
+        console.log('Messages existants:', existingMessages.length);
+        
         existingMessages.unshift(messageData); // Ajouter au début
         localStorage.setItem('contactMessages', JSON.stringify(existingMessages));
         
-        console.log('Message sauvegardé:', messageData);
-        console.log('Données du formulaire:', Object.fromEntries(formData));
+        console.log('Message sauvegardé avec succès dans localStorage');
+        console.log('Total messages après sauvegarde:', existingMessages.length);
         
         showNotification('Votre message a été envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.', 'success');
         
@@ -789,3 +815,41 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// Fonction de test pour vérifier le système
+function testMessageSystem() {
+    console.log('Test du système de messages...');
+    
+    // Créer un message de test
+    const testMessage = {
+        id: 'TEST_' + Date.now(),
+        nom: 'Test Utilisateur',
+        email: 'test@example.com',
+        sujet: 'Test du système',
+        message: 'Ceci est un message de test pour vérifier que le système fonctionne correctement.',
+        urgence: 'normal',
+        newsletter: false,
+        dateEnvoi: new Date().toISOString(),
+        statut: 'new',
+        lu: false,
+        repondu: false
+    };
+    
+    // Sauvegarder dans localStorage
+    const existingMessages = JSON.parse(localStorage.getItem('contactMessages') || '[]');
+    existingMessages.unshift(testMessage);
+    localStorage.setItem('contactMessages', JSON.stringify(existingMessages));
+    
+    console.log('Message de test sauvegardé:', testMessage);
+    console.log('Total messages:', existingMessages.length);
+    
+    // Afficher une notification
+    showNotification('Message de test envoyé avec succès ! Vérifiez le dashboard admin.', 'success');
+    
+    // Ouvrir le dashboard admin dans un nouvel onglet
+    setTimeout(() => {
+        if (confirm('Voulez-vous ouvrir le dashboard admin pour vérifier le message ?')) {
+            window.open('../admin-dashboard.html', '_blank');
+        }
+    }, 2000);
+}
